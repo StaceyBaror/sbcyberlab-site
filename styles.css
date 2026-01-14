@@ -441,6 +441,7 @@ input:focus, textarea:focus{
 .form-note{ color: var(--muted); font-size: 0.93rem; margin-top: 10px; }
 .honeypot{ display:none !important; }
 
+
 /* Footer */
 .footer{ padding: 28px 0; }
 .footer-inner{
