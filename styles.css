@@ -283,6 +283,115 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
 }
 .note{ color: var(--muted); margin-top: 10px; }
 
+/* Insights */
+.insights-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.insight-card{
+  border: 1px solid rgba(11,31,58,0.12);
+  background: rgba(255,255,255,0.92);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow-soft);
+}
+.insights-hero .hero-card{ align-self: start; }
+
+.link-strong{
+  color: var(--navy);
+  font-weight: 850;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.link-strong:hover{ text-decoration-thickness: 2px; }
+
+/* Publications callout */
+.pubs-callout{
+  display:flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid rgba(11,31,58,0.12);
+  background: rgba(26,166,183,0.06);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-top: 12px;
+}
+.pubs-list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+.pubs-list li{ margin: 8px 0; }
+.pubs-list li::marker{ color: var(--gold); }
+
+.pub-tag{
+  display:inline-block;
+  font-weight: 850;
+  font-size: 0.82rem;
+  color: var(--navy);
+  background: rgba(183,121,31,0.10);
+  border: 1px solid rgba(183,121,31,0.22);
+  padding: 5px 9px;
+  border-radius: 999px;
+  margin-right: 8px;
+}
+
+.pubs-links{ margin-top: 10px; }
+
+@media (max-width: 980px){
+  .insights-grid{ grid-template-columns: 1fr; }
+  .pubs-callout{ flex-direction: column; align-items: flex-start; }
+}
+
+
+/* Trust & Proof + Examples */
+.proof-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.proof-card{
+  border: 1px solid rgba(11,31,58,0.12);
+  background: rgba(255,255,255,0.92);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.case-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.case-card{
+  border: 1px solid rgba(11,31,58,0.12);
+  background: rgba(255,255,255,0.92);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.kicker{
+  display:inline-block;
+  font-weight: 850;
+  font-size: 0.85rem;
+  color: var(--navy);
+  background: rgba(26,166,183,0.10);
+  border: 1px solid rgba(26,166,183,0.22);
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+/* Responsive for proof/cases */
+@media (max-width: 980px){
+  .proof-grid, .case-grid{ grid-template-columns: 1fr; }
+}
+
+
 /* Checklist */
 .checklist{ list-style:none; padding:0; margin:0; }
 .checklist li{

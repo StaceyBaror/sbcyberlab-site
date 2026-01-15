@@ -4,28 +4,37 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Privacy Notice | SB Cyber Lab</title>
+
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="https://sbcyberlab.com/privacy.html" />
     <link rel="stylesheet" href="styles.css?v=3" />
   </head>
 
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="/" aria-label="SB Cyber Lab home">
           <img src="assets/sbcyberlab_logo.png" alt="SB Cyber Lab logo" class="brand-logo" />
         </a>
+
         <nav class="nav" aria-label="Primary">
-          <ul class="nav-menu">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+
+          <ul id="nav-menu" class="nav-menu">
             <li><a href="/#services">Services</a></li>
-            <li><a href="/#engagements">Engagements</a></li>
+            <li><a href="/insights.html">Insights</a></li>
             <li><a class="btn btn-small" href="/#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main class="section">
+    <main id="main" class="section">
       <div class="container legal">
         <h1>Privacy Notice</h1>
         <p class="muted">Last updated: <span id="year"></span></p>
@@ -54,7 +63,7 @@
 
         <h2>Your choices</h2>
         <p class="muted">
-          You can request the deletion of your submitted inquiry information by contacting us through the website form.
+          You can request deletion of your submitted inquiry information by contacting us through the website form.
         </p>
 
         <p class="muted"><a href="/">Back to home</a></p>
@@ -63,19 +72,15 @@
 
     <footer class="footer">
       <div class="container footer-inner">
-        <p>© <span id="year-footer"></span> SB Cyber Lab. All rights reserved.</p>
-        <p class="muted"><a href="/terms.html">Terms</a></p>
+        <p>© <span id="year"></span> SB Cyber Lab. All rights reserved.</p>
+        <p class="muted">
+          <a href="/insights.html">Insights</a>
+          &nbsp;•&nbsp;
+          <a href="/terms.html">Terms</a>
+        </p>
       </div>
     </footer>
 
-    <script>
-      (function () {
-        const y = new Date().getFullYear();
-        const year = document.getElementById("year");
-        const yearFooter = document.getElementById("year-footer");
-        if (year) year.textContent = y;
-        if (yearFooter) yearFooter.textContent = y;
-      })();
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
