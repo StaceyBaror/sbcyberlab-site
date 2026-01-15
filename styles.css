@@ -566,6 +566,14 @@ input:focus-visible, textarea:focus-visible, select:focus-visible{
   .grid{ grid-template-columns: 1fr; }
   .contact-cards{ grid-template-columns: 1fr; }
 }
+.success-banner{
+  border: 1px solid rgba(26,166,183,0.35);
+  background: rgba(26,166,183,0.10);
+  border-radius: 16px;
+  padding: 12px 14px;
+  margin: 0 0 12px;
+  color: var(--navy);
+}
 
 /* Reduced motion (accessibility) */
 @media (prefers-reduced-motion: reduce){

@@ -22,7 +22,7 @@
     <meta property="og:url" content="https://sbcyberlab.com/" />
     <meta property="og:image" content="https://sbcyberlab.com/assets/icon-512.png" />
 
-    <!-- Twitter (optional but helpful) -->
+    <!-- Twitter (optional) -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="SB Cyber Lab" />
     <meta
@@ -36,7 +36,7 @@
     <link rel="icon" type="image/png" href="assets/favicon-32.png" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
-    <!-- Cache-bust to force updated CSS -->
+    <!-- Cache-bust -->
     <link rel="stylesheet" href="styles.css?v=3" />
   </head>
 
@@ -46,11 +46,7 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="#top" aria-label="SB Cyber Lab home">
-          <img
-            src="assets/sbcyberlab_logo.png"
-            alt="SB Cyber Lab logo"
-            class="brand-logo"
-          />
+          <img src="assets/sbcyberlab_logo.png" alt="SB Cyber Lab logo" class="brand-logo" />
         </a>
 
         <nav class="nav" aria-label="Primary">
@@ -184,7 +180,6 @@
 
       <hr class="section-divider" />
 
-      <!-- About now has executive glow background + list-style content -->
       <section class="section about-glow" id="about">
         <div class="container about">
           <div>
@@ -225,102 +220,111 @@
 
       <hr class="section-divider" />
 
-<section class="section alt" id="contact">
-  <div class="container contact">
-    <div>
-      <h2>Request a consultation</h2>
-      <p class="muted">
-        Choose what you need and share a few details. We’ll respond with next steps and a proposed plan.
-      </p>
+      <section class="section alt" id="contact">
+        <div class="container contact">
+          <div>
+            <h2>Request a consultation</h2>
+            <p class="muted">
+              Choose what you need and share a few details. We’ll respond with next steps and a proposed plan.
+            </p>
 
-      <div class="contact-cards">
-        <div class="mini-card">
-          <p class="mini-label">Response time</p>
-          <p><strong>24–48 hours</strong> (Mon–Fri)</p>
-          <p class="muted">Urgent requests: select “Urgent” below.</p>
+            <div class="contact-cards">
+              <div class="mini-card">
+                <p class="mini-label">Response time</p>
+                <p><strong>24–48 hours</strong> (Mon–Fri)</p>
+                <p class="muted">Urgent requests: select “Urgent” below.</p>
+              </div>
+
+              <div class="mini-card">
+                <p class="mini-label">What you get</p>
+                <ul class="mini-list">
+                  <li>Clear next steps</li>
+                  <li>Suggested engagement option</li>
+                  <li>Timeline + deliverables</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <form class="form" method="POST" action="https://formspree.io/f/mykkyqjl">
+            <input
+              type="text"
+              name="_gotcha"
+              class="honeypot"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
+
+            <input type="hidden" name="_subject" value="New consultation request (SB Cyber Lab)" />
+            <!-- Redirect back to YOUR site with a success flag (removes Formspree branding) -->
+            <input type="hidden" name="_redirect" value="https://sbcyberlab.com/#contact?sent=1" />
+
+            <div class="success-banner" id="success-banner" hidden role="status" aria-live="polite">
+              <strong>Thank you.</strong> Your request was sent successfully. We’ll respond within 24–48 hours.
+            </div>
+
+            <div class="form-grid">
+              <label class="span-2">
+                What do you need?
+                <select name="service" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Secure software architecture review</option>
+                  <option>Secure SDLC / DevSecOps program</option>
+                  <option>Digital Forensic Readiness (DFR)</option>
+                  <option>DFIR playbooks &amp; incident preparedness</option>
+                  <option>Cyber risk management &amp; governance</option>
+                  <option>Compliance alignment (NIST / HIPAA / HITECH)</option>
+                  <option>AI/ML safety &amp; resilience</option>
+                  <option>Other (briefly describe)</option>
+                </select>
+              </label>
+
+              <label>
+                Priority
+                <select name="priority" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Urgent (this week)</option>
+                  <option>Standard (next 1–2 weeks)</option>
+                  <option>Exploratory (planning)</option>
+                </select>
+              </label>
+
+              <label>
+                Preferred response
+                <select name="preferred_contact" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Email</option>
+                  <option>Schedule a call</option>
+                </select>
+              </label>
+
+              <label>
+                Your name
+                <input name="name" type="text" required autocomplete="name" />
+              </label>
+
+              <label>
+                Your email
+                <input name="email" type="email" required autocomplete="email" />
+              </label>
+
+              <label class="span-2">
+                Short details (optional)
+                <textarea
+                  name="details"
+                  rows="5"
+                  placeholder="Example: We’re migrating to microservices and need an architecture security review. Timeline: 2 weeks."
+                ></textarea>
+              </label>
+            </div>
+
+            <button class="btn btn-accent" type="submit">Request consultation</button>
+
+            <p class="form-note">Minimal input. Clear routing. Professional follow-up.</p>
+          </form>
         </div>
-
-        <div class="mini-card">
-          <p class="mini-label">What you get</p>
-          <ul class="mini-list">
-            <li>Clear next steps</li>
-            <li>Suggested engagement option</li>
-            <li>Timeline + deliverables</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <form class="form" method="POST" action="https://formspree.io/f/mykkyqjl">
-      <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
-
-      <input type="hidden" name="_subject" value="New consultation request (SB Cyber Lab)" />
-      <input type="hidden" name="_redirect" value="https://sbcyberlab.com/#contact" />
-
-      <div class="form-grid">
-        <label class="span-2">
-          What do you need?
-          <select name="service" required>
-            <option value="" selected disabled>Select one</option>
-            <option>Secure software architecture review</option>
-            <option>Secure SDLC / DevSecOps program</option>
-            <option>Digital Forensic Readiness (DFR)</option>
-            <option>DFIR playbooks &amp; incident preparedness</option>
-            <option>Cyber risk management &amp; governance</option>
-            <option>Compliance alignment (NIST / HIPAA / HITECH)</option>
-            <option>AI/ML safety &amp; resilience</option>
-            <option>Other (briefly describe)</option>
-          </select>
-        </label>
-
-        <label>
-          Priority
-          <select name="priority" required>
-            <option value="" selected disabled>Select one</option>
-            <option>Urgent (this week)</option>
-            <option>Standard (next 1–2 weeks)</option>
-            <option>Exploratory (planning)</option>
-          </select>
-        </label>
-
-        <label>
-          Preferred response
-          <select name="preferred_contact" required>
-            <option value="" selected disabled>Select one</option>
-            <option>Email</option>
-            <option>Schedule a call</option>
-          </select>
-        </label>
-
-        <label>
-          Your name
-          <input name="name" type="text" required autocomplete="name" />
-        </label>
-
-        <label>
-          Your email
-          <input name="email" type="email" required autocomplete="email" />
-        </label>
-
-        <label class="span-2">
-          Short details (optional)
-          <textarea
-            name="details"
-            rows="5"
-            placeholder="Example: We’re migrating to microservices and need an architecture security review. Timeline: 2 weeks."
-          ></textarea>
-        </label>
-      </div>
-
-      <button class="btn" type="submit">Request consultation</button>
-
-      <p class="form-note">
-        Minimal input. Clear routing. Professional follow-up.
-      </p>
-    </form>
-  </div>
-</section>
-
+      </section>
     </main>
 
     <footer class="footer">

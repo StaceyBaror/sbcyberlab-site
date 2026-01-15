@@ -36,4 +36,11 @@
     const clickInside = menu.contains(target) || toggle.contains(target);
     if (!clickInside) closeMenu();
   });
+
+  // Show on-site success message after Formspree redirect
+  const banner = document.getElementById("success-banner");
+  if (banner) {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("sent") === "1") banner.hidden = false;
+  }
 })();
