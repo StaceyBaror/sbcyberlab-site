@@ -53,16 +53,17 @@
     </header>
 
     <main id="main">
-      <section class="hero insights-hero">
+      <section class="hero insights-hero" id="top">
         <div class="container hero-inner">
           <div class="hero-copy">
             <p class="eyebrow">Insights</p>
             <h1>
-              Practical guidance,<br />
-              research-grounded.
+              Executive clarity.<br />
+              Research-backed.
             </h1>
+
             <p class="lead">
-              Short, executive-friendly reads on secure architecture, forensic readiness, and security programs that teams can actually run.
+              Short, high-signal guidance on secure delivery, forensic readiness, and incident preparedness—built for leaders and lean teams.
             </p>
 
             <div class="hero-cta">
@@ -72,14 +73,14 @@
           </div>
 
           <div class="hero-card" role="region" aria-label="Topics included">
-            <h2 class="card-title">Topics</h2>
+            <h2 class="card-title">What we cover</h2>
             <ul class="checklist">
               <li>Secure SDLC &amp; DevSecOps</li>
               <li>Forensic readiness</li>
+              <li>Centralized logging</li>
               <li>DFIR playbooks</li>
-              <li>Risk &amp; governance</li>
             </ul>
-            <p class="note">Clear, practical, and implementable.</p>
+            <p class="note">Practical. Defensible. Implementable.</p>
           </div>
         </div>
       </section>
@@ -90,23 +91,24 @@
         <div class="container">
           <div class="section-head">
             <h2>Featured</h2>
-            <p>Start here for the essentials.</p>
+            <p>Start here for the essentials—clear baselines you can actually run.</p>
           </div>
 
-          <div class="insights-grid">
+          <!-- Featured (3 cards for clean grid) -->
+          <div class="insights-grid featured">
             <article class="insight-card" id="secure-sdlc">
               <p class="kicker">Insight</p>
               <h3>Secure SDLC: what “good” looks like</h3>
               <p class="muted">
-                A simple blueprint that helps teams improve security posture without slowing delivery.
+                A lean blueprint that reduces risk without slowing delivery.
               </p>
               <ul class="bullets">
-                <li>Define security gates that fit your CI/CD reality.</li>
-                <li>Make threat modeling lightweight but repeatable.</li>
-                <li>Use measurable controls (not “security theater”).</li>
+                <li>Security gates that fit your CI/CD.</li>
+                <li>Lightweight threat modeling that scales.</li>
+                <li>Controls you can measure—not theater.</li>
               </ul>
               <p class="muted">
-                Want a tailored blueprint for your team? <a class="link-strong" href="/#contact">Request a consultation</a>.
+                Want the blueprint tailored to your environment? <a class="link-strong" href="/#contact">Request a consultation</a>.
               </p>
             </article>
 
@@ -114,47 +116,55 @@
               <p class="kicker">Insight</p>
               <h3>Forensic readiness in SaaS systems</h3>
               <p class="muted">
-                Investigations fail when evidence is missing or unreliable. Start with minimum viable readiness.
+                If evidence is missing or unreliable, investigations fail. Fix the basics first.
               </p>
               <ul class="bullets">
-                <li>Log the right events with integrity and timestamps.</li>
-                <li>Define retention and access controls for evidence.</li>
-                <li>Document investigation workflows before incidents happen.</li>
+                <li>High-value logs with timestamps and integrity.</li>
+                <li>Retention, access control, and auditability.</li>
+                <li>Workflows defined before incidents happen.</li>
               </ul>
               <p class="muted">
-                Prefer a readiness assessment sprint? <a class="link-strong" href="/#contact">Request a consultation</a>.
+                Prefer a readiness sprint? <a class="link-strong" href="/#contact">Request a consultation</a>.
               </p>
             </article>
-            <article class="insight-card" id="centralized-logging">
-              <p class="kicker">Insight</p>
-              <h3>Minimum viable centralized logging for SMBs</h3>
-              <p class="muted">
-                 A simple, realistic approach to collecting security events, storing them centrally, and creating alerts your team can act on.
-              </p>
-              <ul class="bullets">
-                <li>Start with identity, endpoint, email, and admin activity logs.</li>
-                <li>Centralize storage with clear retention and access control.</li>
-                <li>Create a small set of high-signal alerts with owners and next steps.</li>
-              </ul>
-              <p class="muted">
-                Want this implemented end-to-end? <a class="link-strong" href="/#contact">Request a consultation</a>.
-              </p>
-            </article>
-
 
             <article class="insight-card" id="dfir-playbooks">
               <p class="kicker">Insight</p>
-              <h3>DFIR playbooks that actually work</h3>
+              <h3>DFIR playbooks teams actually use</h3>
               <p class="muted">
-                Playbooks succeed when they are trigger-based, owned, and actionable under pressure.
+                Playbooks work when they’re trigger-based, owned, and executable under pressure.
               </p>
               <ul class="bullets">
-                <li>Define triggers, owners, and escalation criteria.</li>
-                <li>Separate “containment” from “investigation.”</li>
-                <li>Practice with tabletop exercises and iterate.</li>
+                <li>Clear triggers, owners, escalation.</li>
+                <li>Containment separated from investigation.</li>
+                <li>Tabletops that produce real improvements.</li>
               </ul>
               <p class="muted">
-                Need a set of playbooks tailored to your environment? <a class="link-strong" href="/#contact">Request a consultation</a>.
+                Need playbooks tailored to your stack? <a class="link-strong" href="/#contact">Request a consultation</a>.
+              </p>
+            </article>
+          </div>
+
+          <div class="section-head" style="margin-top:18px;">
+            <h2 style="font-size:1.25rem; margin:0;">More insights</h2>
+            <p style="margin:0;">Short reads for lean teams building readiness without a security department.</p>
+          </div>
+
+          <!-- More (single card keeps it clean, avoids odd 4th-card layout) -->
+          <div class="insights-grid" style="grid-template-columns: 1fr;">
+            <article class="insight-card" id="centralized-logging">
+              <p class="kicker">Insight</p>
+              <h3>Minimum viable centralized logging for SMBs (CISA-aligned)</h3>
+              <p class="muted">
+                Centralized logging is not a “SIEM project.” It’s a readiness baseline: collect the right events, store them safely, and create a small set of alerts your team can act on.
+              </p>
+              <ul class="bullets">
+                <li>Start with identity, admin actions, endpoint signals, and email activity.</li>
+                <li>Centralize storage with retention and access controls.</li>
+                <li>Define 8–12 high-signal alerts with owners and next steps.</li>
+              </ul>
+              <p class="muted">
+                Want this implemented end-to-end (tooling, configuration, training)? <a class="link-strong" href="/#contact">Request a consultation</a>.
               </p>
             </article>
           </div>
@@ -187,22 +197,28 @@
 
             <a class="btn btn-small" href="/#contact">Contact</a>
           </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn btn-ghost btn-small" href="/#services">View services</a>
+            <a class="btn btn-ghost btn-small" href="#top">Back to top</a>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-  <div class="container footer-inner">
-    <p>© <span id="year"></span> SB Cyber Lab. All rights reserved.</p>
-    <p class="muted">
-      <a href="/">Home</a>
-      &nbsp;•&nbsp;
-      <a href="/privacy.html">Privacy</a>
-      &nbsp;•&nbsp;
-      <a href="/terms.html">Terms</a>
-    </p>
-  </div>
-</footer>
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> SB Cyber Lab. All rights reserved.</p>
+        <p class="muted">
+          <a href="/">Home</a>
+          &nbsp;•&nbsp;
+          <a href="/privacy.html">Privacy</a>
+          &nbsp;•&nbsp;
+          <a href="/terms.html">Terms</a>
+        </p>
+      </div>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
