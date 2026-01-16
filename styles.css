@@ -753,8 +753,6 @@ input:focus-visible, textarea:focus-visible, select:focus-visible{
 @media (max-width: 980px){
   .featured{ grid-template-columns: 1fr; }
 }
-
-
 /* ===========================
    Legal pages (privacy/terms)
    You already use .legal in HTML
