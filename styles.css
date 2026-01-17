@@ -1,4 +1,4 @@
-/* SB Cyber Lab — V2.3: executive premium (V2.2 + contact polish + robustness) */
+/* SB Cyber Lab — V2.4: executive premium (cleanup + correctness + consistency) */
 :root{
   --bg:#ffffff;
   --surface:#ffffff;
@@ -20,7 +20,6 @@
   --radius: 18px;
   --max: 1120px;
 
-  /* Hero + section gradients (controlled, classy) */
   --grad-hero:
     radial-gradient(1200px 700px at 12% 4%, rgba(26,166,183,0.18) 0%, rgba(26,166,183,0.00) 60%),
     radial-gradient(900px 600px at 88% 18%, rgba(183,121,31,0.16) 0%, rgba(183,121,31,0.00) 55%),
@@ -36,7 +35,6 @@
   --grad-accent: linear-gradient(135deg, rgba(26,166,183,0.92), rgba(11,31,58,0.95));
   --grad-gold: linear-gradient(135deg, rgba(183,121,31,1), rgba(210,151,58,1));
 
-  /* Section color blocks */
   --block-navy:
     radial-gradient(900px 600px at 20% 0%, rgba(26,166,183,0.18) 0%, rgba(26,166,183,0.00) 55%),
     radial-gradient(900px 600px at 90% 40%, rgba(183,121,31,0.14) 0%, rgba(183,121,31,0.00) 55%),
@@ -63,6 +61,11 @@ img{ max-width:100%; height:auto; display:block; }
 
 a{ color:inherit; text-decoration:none; }
 a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+a:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(26,166,183,0.18);
+  border-radius: 8px;
+}
 
 p{ margin:0 0 12px; }
 h1,h2,h3{ line-height:1.12; margin:0 0 10px; }
@@ -169,7 +172,6 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
 }
 .btn-ghost:hover{ background: rgba(26,166,183,0.10); }
 
-/* Accent button (optional for “Request consultation”) */
 .btn-accent{
   background: var(--grad-gold);
   color:#fff;
@@ -181,7 +183,6 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
   box-shadow: 0 0 0 4px rgba(183,121,31,0.18), 0 10px 22px rgba(183,121,31,0.18);
 }
 
-/* Hover effects only where hovering exists (prevents weird mobile behavior) */
 @media (hover:hover){
   .btn:hover{
     text-decoration:none;
@@ -283,20 +284,45 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
 }
 .note{ color: var(--muted); margin-top: 10px; }
 
-/* Insights */
+/* Grids */
 .insights-grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
+.insights-grid.single{
+  grid-template-columns: 1fr;
+}
+
 .insight-card{
   border: 1px solid rgba(11,31,58,0.12);
   background: rgba(255,255,255,0.92);
   border-radius: var(--radius);
   padding: 18px;
   box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
 }
-.insights-hero .hero-card{ align-self: start; }
+.insight-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(26,166,183,0.75), rgba(183,121,31,0.75));
+  opacity: 0.9;
+}
+
+@media (hover:hover){
+  .insight-card{
+    transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background .16s ease;
+  }
+  .insight-card:hover{
+    transform: translateY(-3px);
+    border-color: rgba(11,31,58,0.18);
+    box-shadow: 0 18px 40px rgba(11,18,32,0.12);
+    background: rgba(255,255,255,0.97);
+  }
+}
 
 .link-strong{
   color: var(--navy);
@@ -318,6 +344,11 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
   padding: 14px 16px;
   margin-top: 12px;
 }
+.callout-title{
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
 .pubs-list{
   margin: 10px 0 0;
   padding-left: 18px;
@@ -337,14 +368,19 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
   border-radius: 999px;
   margin-right: 8px;
 }
-
 .pubs-links{ margin-top: 10px; }
+
+.inline-actions{
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
 @media (max-width: 980px){
   .insights-grid{ grid-template-columns: 1fr; }
   .pubs-callout{ flex-direction: column; align-items: flex-start; }
 }
-
 
 /* Trust & Proof + Examples */
 .proof-grid{
@@ -386,11 +422,9 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
   margin-bottom: 10px;
 }
 
-/* Responsive for proof/cases */
 @media (max-width: 980px){
   .proof-grid, .case-grid{ grid-template-columns: 1fr; }
 }
-
 
 /* Checklist */
 .checklist{ list-style:none; padding:0; margin:0; }
@@ -414,7 +448,7 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
   color: var(--gold);
 }
 
-/* Divider between sections */
+/* Divider */
 .section-divider{
   height: 1px;
   background: var(--grad-divider);
@@ -430,7 +464,6 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
   border-bottom: 1px solid var(--border);
 }
 
-/* Dark executive block (Services) */
 .section.block{
   background: var(--block-navy);
   color: rgba(255,255,255,0.92);
@@ -460,6 +493,22 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
   background: var(--grad-accent);
 }
 .section-head p{ color: var(--muted); max-width: 70ch; }
+
+/* Compact section head (removes inline styles in insights.html) */
+.section-head.compact{
+  margin-top: 18px;
+}
+.section-head.compact h2{
+  font-size: 1.25rem;
+  margin: 0;
+  padding-bottom: 0;
+}
+.section-head.compact h2::after{
+  display:none;
+}
+.section-head.compact p{
+  margin: 0;
+}
 
 /* Services grid */
 .grid{
@@ -493,7 +542,6 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
 .tile h3{ color: var(--navy); }
 .tile p{ color: var(--muted); margin: 6px 0 0; }
 
-/* Services tiles inside dark block */
 .section.block .tile{
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
@@ -533,7 +581,6 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
   box-shadow: var(--shadow);
 }
 
-/* About glow */
 .section.about-glow{
   position: relative;
   background: var(--block-slate);
@@ -552,6 +599,16 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
 .section.about-glow .container{
   position: relative;
   z-index: 1;
+}
+
+/* Featured grid for logging.html (2x2 on desktop) */
+.featured{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media (max-width: 980px){
+  .featured{ grid-template-columns: 1fr; }
 }
 
 /* Contact */
@@ -580,8 +637,6 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
   font-size: 0.9rem;
   margin-bottom: 6px;
 }
-
-/* Executive mini list (used in upgraded Contact section) */
 .mini-list{
   margin: 0;
   padding-left: 18px;
@@ -612,11 +667,7 @@ input:focus, textarea:focus, select:focus{
   border-color: rgba(26,166,183,0.65);
   box-shadow: 0 0 0 4px rgba(26,166,183,0.18);
 }
-input:focus-visible, textarea:focus-visible, select:focus-visible{
-  outline:none;
-}
 
-/* Two-column form grid (used in upgraded Contact section) */
 .form-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -627,6 +678,15 @@ input:focus-visible, textarea:focus-visible, select:focus-visible{
 
 .form-note{ color: var(--muted); font-size: 0.93rem; margin-top: 10px; }
 .honeypot{ display:none !important; }
+
+.success-banner{
+  border: 1px solid rgba(26,166,183,0.35);
+  background: rgba(26,166,183,0.10);
+  border-radius: 16px;
+  padding: 12px 14px;
+  margin: 0 0 12px;
+  color: var(--navy);
+}
 
 /* Footer */
 .footer{ padding: 28px 0; }
@@ -675,100 +735,16 @@ input:focus-visible, textarea:focus-visible, select:focus-visible{
   .grid{ grid-template-columns: 1fr; }
   .contact-cards{ grid-template-columns: 1fr; }
 }
-.success-banner{
-  border: 1px solid rgba(26,166,183,0.35);
-  background: rgba(26,166,183,0.10);
-  border-radius: 16px;
-  padding: 12px 14px;
-  margin: 0 0 12px;
-  color: var(--navy);
-}
 
-/* Reduced motion (accessibility) */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *{ transition: none !important; }
 }
-/* ===========================
-   Insights polish + 4-card grid
-   (Drop-in add-on)
-   =========================== */
 
-/* Optional: slightly tighter rhythm inside cards */
-.insight-card h3{ margin-bottom: 8px; }
-.insight-card .muted{ margin-bottom: 10px; }
-
-/* Premium interaction (subtle, not "startup-y") */
-@media (hover:hover){
-  .insight-card{
-    transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background .16s ease;
-  }
-  .insight-card:hover{
-    transform: translateY(-3px);
-    border-color: rgba(11,31,58,0.18);
-    box-shadow: 0 18px 40px rgba(11,18,32,0.12);
-    background: rgba(255,255,255,0.97);
-  }
-}
-
-/* A refined top accent line (matches Services tiles, but quieter) */
-.insight-card{
-  position: relative;
-  overflow: hidden;
-}
-.insight-card::before{
-  content:"";
-  position:absolute;
-  inset:0 0 auto 0;
-  height: 3px;
-  background: linear-gradient(90deg, rgba(26,166,183,0.75), rgba(183,121,31,0.75));
-  opacity: 0.9;
-}
-
-/* Featured grid variant: supports 4 cards nicely */
-.insights-grid.featured{
-  grid-template-columns: repeat(4, 1fr);
-}
-@media (max-width: 1100px){
-  .insights-grid.featured{ grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 980px){
-  .insights-grid.featured{ grid-template-columns: 1fr; }
-}
-
-/* Optional: slightly smaller bullets inside insight cards for executive feel */
-.insight-card .bullets{
-  margin-top: 10px;
-}
-.insight-card .bullets li{
-  margin: 8px 0;
-}
-/* Featured grid (2x2 on desktop) */
-.featured{
-  display:grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-}
-
-@media (max-width: 980px){
-  .featured{ grid-template-columns: 1fr; }
-}
-/* ===========================
-   Legal pages (privacy/terms)
-   You already use .legal in HTML
-   =========================== */
-.legal{
-  max-width: 78ch;
-}
-.legal h1{
-  margin-bottom: 8px;
-}
-.legal h2{
-  margin-top: 20px;
-}
-.legal p, .legal li{
-  font-size: 1.02rem;
-}
-.legal .bullets{
-  margin-top: 10px;
-}
+/* Legal pages */
+.legal{ max-width: 78ch; }
+.legal h1{ margin-bottom: 8px; }
+.legal h2{ margin-top: 20px; }
+.legal p, .legal li{ font-size: 1.02rem; }
+.legal .bullets{ margin-top: 10px; }

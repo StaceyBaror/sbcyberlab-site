@@ -12,6 +12,7 @@
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="https://sbcyberlab.com/insights.html" />
 
+    <meta property="og:site_name" content="SB Cyber Lab" />
     <meta property="og:title" content="SB Cyber Lab — Insights" />
     <meta
       property="og:description"
@@ -21,11 +22,11 @@
     <meta property="og:url" content="https://sbcyberlab.com/insights.html" />
     <meta property="og:image" content="https://sbcyberlab.com/assets/icon-512.png" />
 
-    <link rel="icon" href="assets/favicon.ico" />
-    <link rel="icon" type="image/png" href="assets/favicon-32.png" />
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
-    <link rel="stylesheet" href="styles.css?v=3" />
+    <link rel="stylesheet" href="/styles.css?v=4" />
   </head>
 
   <body>
@@ -34,11 +35,11 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="/" aria-label="SB Cyber Lab home">
-          <img src="assets/sbcyberlab_logo.png" alt="SB Cyber Lab logo" class="brand-logo" />
+          <img src="/assets/sbcyberlab_logo.png" alt="SB Cyber Lab logo" class="brand-logo" width="240" height="54" />
         </a>
 
         <nav class="nav" aria-label="Primary">
-          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" type="button">
             <span class="sr-only">Toggle navigation</span>
             <span class="nav-toggle-bars" aria-hidden="true"></span>
           </button>
@@ -53,7 +54,6 @@
     </header>
 
     <main id="main">
-      <!-- HERO -->
       <section class="hero insights-hero" id="top">
         <div class="container hero-inner">
           <div class="hero-copy">
@@ -88,7 +88,6 @@
 
       <hr class="section-divider" />
 
-      <!-- FEATURED -->
       <section class="section">
         <div class="container">
           <div class="section-head">
@@ -96,7 +95,7 @@
             <p>Start here for the essentials—clear baselines you can actually run.</p>
           </div>
 
-          <div class="insights-grid featured">
+          <div class="insights-grid">
             <article class="insight-card" id="secure-sdlc">
               <p class="kicker">Insight</p>
               <h3>Secure SDLC: what “good” looks like</h3>
@@ -143,19 +142,17 @@
             </article>
           </div>
 
-          <!-- MORE -->
-          <div class="section-head" style="margin-top: 18px;">
-            <h2 style="font-size: 1.25rem; margin: 0;">More insights</h2>
-            <p style="margin: 0;">Short reads for lean teams building readiness without a security department.</p>
+          <div class="section-head compact">
+            <h2>More insights</h2>
+            <p>Short reads for lean teams building readiness without a security department.</p>
           </div>
 
-          <div class="insights-grid" style="grid-template-columns: 1fr;">
+          <div class="insights-grid single">
             <article class="insight-card" id="centralized-logging">
               <p class="kicker">Insight</p>
               <h3>Minimum viable logging for small teams (CISA-aligned)</h3>
               <p class="muted">
-                A practical baseline for security event collection, centralized storage, and alerts—designed for organizations without a
-                dedicated security team.
+                A practical baseline for security event collection, centralized storage, and alerts—designed for organizations without a dedicated security team.
               </p>
               <ul class="bullets">
                 <li>Collect high-signal identity, endpoint, email, and admin activity.</li>
@@ -172,7 +169,6 @@
 
       <hr class="section-divider" />
 
-      <!-- PUBLICATIONS -->
       <section class="section about-glow">
         <div class="container">
           <div class="section-head">
@@ -191,14 +187,14 @@
               <p class="muted pubs-links">
                 <a class="link-strong" href="/#contact">Request full list</a>
                 <span aria-hidden="true"> • </span>
-                <a class="link-strong" href="https://orcid.org/" rel="noopener noreferrer">ORCID</a>
+                <a class="link-strong" href="https://orcid.org/0000-0003-0523-2751" target="_blank" rel="noopener noreferrer">ORCID</a>
               </p>
             </div>
 
             <a class="btn btn-small" href="/#contact">Contact</a>
           </div>
 
-          <div style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap;">
+          <div class="inline-actions">
             <a class="btn btn-ghost btn-small" href="/#services">View services</a>
             <a class="btn btn-ghost btn-small" href="#top">Back to top</a>
           </div>
@@ -219,6 +215,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>

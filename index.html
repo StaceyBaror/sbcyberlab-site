@@ -7,37 +7,39 @@
 
     <meta
       name="description"
-      content="SB Cyber Lab is a cybersecurity consultancy focused on secure software architecture, digital forensic readiness, and cyber risk management."
+      content="SB Cyber Lab is a cybersecurity consultancy focused on secure software architecture, digital forensic readiness, and practical risk governance."
     />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="https://sbcyberlab.com/" />
+    <meta name="theme-color" content="#0b1f3a" />
 
     <!-- Open Graph -->
+    <meta property="og:site_name" content="SB Cyber Lab" />
     <meta property="og:title" content="SB Cyber Lab" />
     <meta
       property="og:description"
-      content="Secure architecture. Resilient systems. Cybersecurity consulting for resilient, forensic-ready systems."
+      content="Secure architecture. Resilient systems. Cybersecurity consulting for forensic-ready, delivery-safe security programs."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sbcyberlab.com/" />
     <meta property="og:image" content="https://sbcyberlab.com/assets/icon-512.png" />
 
-    <!-- Twitter (optional) -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="SB Cyber Lab" />
     <meta
       name="twitter:description"
-      content="Secure architecture. Resilient systems. Cybersecurity consulting for resilient, forensic-ready systems."
+      content="Secure architecture. Resilient systems. Cybersecurity consulting for forensic-ready, delivery-safe security programs."
     />
     <meta name="twitter:image" content="https://sbcyberlab.com/assets/icon-512.png" />
 
     <!-- Favicons -->
-    <link rel="icon" href="assets/favicon.ico" />
-    <link rel="icon" type="image/png" href="assets/favicon-32.png" />
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
     <!-- Cache-bust -->
-    <link rel="stylesheet" href="styles.css?v=3" />
+    <link rel="stylesheet" href="/styles.css?v=4" />
   </head>
 
   <body>
@@ -46,11 +48,17 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="#top" aria-label="SB Cyber Lab home">
-          <img src="assets/sbcyberlab_logo.png" alt="SB Cyber Lab logo" class="brand-logo" />
+          <img
+            src="/assets/sbcyberlab_logo.png"
+            alt="SB Cyber Lab logo"
+            class="brand-logo"
+            width="240"
+            height="54"
+          />
         </a>
 
         <nav class="nav" aria-label="Primary">
-          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" type="button">
             <span class="sr-only">Toggle navigation</span>
             <span class="nav-toggle-bars" aria-hidden="true"></span>
           </button>
@@ -78,8 +86,8 @@
             </h1>
 
             <p class="lead">
-              Turning cutting-edge research into real-world cybersecurity resilience. We help
-              organizations build secure, forensic-ready systems and strengthen cyber risk governance.
+              Research-grounded security that ships. We help teams design secure, forensic-ready systems and run practical
+              risk governance without slowing delivery.
             </p>
 
             <div class="hero-cta">
@@ -99,9 +107,8 @@
             <h2 class="card-title">What we deliver</h2>
             <ul class="checklist">
               <li>Security-by-design architecture reviews</li>
-              <li>Practical DFIR playbooks and readiness</li>
-              <li>Risk governance aligned to industry standards</li>
-              
+              <li>Forensic readiness + DFIR playbooks</li>
+              <li>Risk governance aligned to standards</li>
               <li>AI/ML resilience for security systems</li>
             </ul>
             <p class="note">Focused, evidence-driven, and implementation-ready.</p>
@@ -122,23 +129,23 @@
             <article class="proof-card">
               <h3>Led by rigorous research</h3>
               <p class="muted">
-                We translate research in digital forensics, secure architectures, and AI/ML safety into real-world outcomes.
+                We translate research in digital forensics, secure architectures, and AI/ML safety into usable real-world outcomes.
               </p>
             </article>
 
             <article class="proof-card">
               <h3>Standards-aligned</h3>
               <p class="muted">
-                Practical alignment to frameworks such as NIST and healthcare expectations (HIPAA/HITECH), tailored to reality.
+                Practical alignment to frameworks such as NIST and healthcare expectations (HIPAA/HITECH), tailored to your operating reality.
               </p>
             </article>
+
             <article class="proof-card">
               <h3>Practical, standards-aligned logging</h3>
               <p class="muted">
-                Centralized log management aligned with CISA guidance—configured, documented, and usable
-                for detection, response, and forensic investigation.
+                Centralized log management aligned with CISA guidance—configured, documented, and usable for detection, response, and investigation.
               </p>
-            </article>  
+            </article>
 
             <article class="proof-card">
               <h3>Forensic-ready by design</h3>
@@ -152,7 +159,7 @@
             <article class="case-card">
               <p class="kicker">Example</p>
               <h3>Architecture hardening</h3>
-              <p class="muted">Outcome: prioritized fixes + implementation plan to reduce attack surface.</p>
+              <p class="muted">Outcome: prioritized fixes + an implementation plan to reduce attack surface.</p>
             </article>
 
             <article class="case-card">
@@ -176,7 +183,7 @@
         <div class="container">
           <div class="section-head">
             <h2>Services</h2>
-            <p>Clear deliverables that strengthen resilience without slowing down delivery.</p>
+            <p>Clear deliverables that strengthen resilience without slowing delivery.</p>
           </div>
 
           <div class="grid">
@@ -209,13 +216,11 @@
               <h3>Compliance Alignment</h3>
               <p>Support for controls alignment (e.g., NIST, HIPAA, HITECH) and audit readiness.</p>
             </article>
+
             <article class="tile">
               <h3>Centralized Log Management (SMB-ready)</h3>
-              <p>
-                Deploy and operationalize centralized security logging—collection, storage, dashboards, and alerting—
-                with installation and training for teams without a dedicated security function.
-              </p>
-            </article>  
+              <p>Collection, storage, dashboards, and alerting—implemented with documentation and team training.</p>
+            </article>
 
             <article class="tile">
               <h3>AI/ML Safety &amp; Resilience</h3>
@@ -236,16 +241,15 @@
         <div class="container">
           <div class="section-head">
             <h2>Key highlights</h2>
-            <p>Representative outcomes: Project tailored to your organizational need and threat landscape.</p>
+            <p>Representative outcomes, tailored to your threat landscape and operating constraints.</p>
           </div>
 
           <ul class="bullets">
-            <li>Designed and implemented secure SDLC frameworks aligned with NIST, HIPAA, and HITECH standards.</li>
-            <li>Developed digital forensics and incident response (DFIR) playbooks to strengthen preparedness against cybercrime.</li>
+            <li>Designed and implemented secure SDLC frameworks aligned with NIST, HIPAA, and HITECH expectations.</li>
+            <li>Developed DFIR playbooks to strengthen preparedness against cybercrime and reduce response friction.</li>
             <li>Provided cyber risk governance and compliance guidance aligned with privacy regulations and industry standards.</li>
-            <li>Deployed centralized log management and security event alerting to help small teams detect and respond to incidents faster.</li>
-            <li>Implemented centralized security logging, alerting, and evidence-ready retention for organizations without dedicated cybersecurity teams.</li>
-            <li>Applied AI/ML safety and resilience techniques to improve system reliability and responsible deployment.</li>
+            <li>Deployed centralized security logging, alerting, and evidence-ready retention for lean teams.</li>
+            <li>Applied AI/ML safety and resilience techniques to support responsible deployment and reliability.</li>
           </ul>
         </div>
       </section>
@@ -263,27 +267,21 @@
             <article class="insight-card">
               <p class="kicker">Insight</p>
               <h3>Secure SDLC: what “good” looks like</h3>
-              <p class="muted">
-                A practical blueprint for shipping faster while reducing risk—without turning delivery into bureaucracy.
-              </p>
+              <p class="muted">A practical blueprint for shipping faster while reducing risk—without bureaucracy.</p>
               <a class="btn btn-ghost btn-small" href="/insights.html#secure-sdlc">Read</a>
             </article>
 
             <article class="insight-card">
               <p class="kicker">Insight</p>
               <h3>Forensic readiness in SaaS systems</h3>
-              <p class="muted">
-                The minimum logging and evidence integrity practices that make investigations faster and defensible.
-              </p>
+              <p class="muted">Minimum logging + evidence integrity practices that make investigations faster and defensible.</p>
               <a class="btn btn-ghost btn-small" href="/insights.html#forensic-readiness">Read</a>
             </article>
 
             <article class="insight-card">
               <p class="kicker">Insight</p>
               <h3>DFIR playbooks that actually work</h3>
-              <p class="muted">
-                How to write incident runbooks teams follow under pressure—clear triggers, owners, and escalation paths.
-              </p>
+              <p class="muted">Runbooks teams follow under pressure—clear triggers, owners, and escalation.</p>
               <a class="btn btn-ghost btn-small" href="/insights.html#dfir-playbooks">Read</a>
             </article>
           </div>
@@ -292,7 +290,7 @@
             <div>
               <h3 class="callout-title">Selected publications</h3>
               <p class="muted">
-                Research contributions in digital forensics readiness, secure architectures, and human communication-based cybercrime detection.
+                Research contributions in digital forensic readiness, secure architectures, and human communication-based cybercrime detection.
               </p>
 
               <ul class="pubs-list">
@@ -300,16 +298,20 @@
                 <li><span class="pub-tag">Secure systems</span> Security-aware microservices and resilient design</li>
                 <li><span class="pub-tag">AI/ML in security</span> NLP/ML approaches for cybercrime signals</li>
               </ul>
+
               <p class="muted pubs-links">
-                <a class="link-strong" href="#contact">Innovation Research</a>
-                <span aria-hidden="true">•</span>
-                <a class="link-strong"
-                href="https://orcid.org/0000-0003-0523-2751"
-                target="_blank"
-                rel="noopener noreferrer"aria-label="ORCID profile: 0000-0003-0523-2751">ORCID: 0000-0003-0523-2751
-                </a>
+                <a class="link-strong" href="#contact">Request full list</a>
+                <span aria-hidden="true"> • </span>
+                <a
+                  class="link-strong"
+                  href="https://orcid.org/0000-0003-0523-2751"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="ORCID profile: 0000-0003-0523-2751"
+                >ORCID: 0000-0003-0523-2751</a>
               </p>
             </div>
+
             <a class="btn btn-small" href="/insights.html">View Insights</a>
           </div>
         </div>
@@ -323,11 +325,11 @@
             <h2>About SB Cyber Lab</h2>
 
             <ul class="checklist">
-              <li><strong>Research → operational delivery:</strong> translating research-grade cybersecurity into practical outcomes.</li>
-              <li><strong>Secure-by-design architecture:</strong> building systems that withstand real-world threats.</li>
-              <li><strong>Resilience under pressure:</strong> strengthening reliability, response, and recovery during incidents.</li>
-              <li><strong>Centralized logging:</strong> deploying a practical baseline for security event collection, alerting, and enablement (1–2 weeks).</li>
-              <li><strong>Forensic readiness:</strong> ensuring evidence is captured, preserved, and usable when incidents occur.</li>
+              <li><strong>Research → delivery:</strong> translating research-grade security into practical outcomes.</li>
+              <li><strong>Secure-by-design architecture:</strong> systems that withstand real-world threats.</li>
+              <li><strong>Resilience under pressure:</strong> stronger response, recovery, and operational confidence.</li>
+              <li><strong>Centralized logging:</strong> a practical baseline for collection, alerting, and enablement (1–2 weeks).</li>
+              <li><strong>Forensic readiness:</strong> evidence captured, preserved, and usable when incidents occur.</li>
             </ul>
 
             <p class="muted">
@@ -355,9 +357,7 @@
         <div class="container contact">
           <div>
             <h2>Request a consultation</h2>
-            <p class="muted">
-              Choose what you need and share a few details. We’ll respond with next steps and a proposed plan.
-            </p>
+            <p class="muted">Choose what you need and share a few details. We’ll respond with next steps and a proposed plan.</p>
 
             <div class="contact-cards">
               <div class="mini-card">
@@ -380,7 +380,7 @@
           <form class="form" method="POST" action="https://formspree.io/f/mykkyqjl">
             <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <input type="hidden" name="_subject" value="New consultation request (SB Cyber Lab)" />
-            <input type="hidden" name="_redirect" value="https://sbcyberlab.com/#contact?sent=1" />
+            <input type="hidden" name="_redirect" value="https://sbcyberlab.com/?sent=1#contact" />
 
             <div class="success-banner" id="success-banner" hidden role="status" aria-live="polite">
               <strong>Thank you.</strong> Your request was sent successfully. We’ll respond within 24–48 hours.
@@ -462,6 +462,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>
