@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Forensic Readiness Playbook | SB Cyber Lab</title>
+
+    <meta
+      name="description"
+      content="Forensic readiness playbook for SaaS: evidence-ready logging, integrity, time synchronization, retention, access control, and incident workflows."
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://sbcyberlab.com/playbooks/forensic-readiness.html" />
+
+    <meta property="og:site_name" content="SB Cyber Lab" />
+    <meta property="og:title" content="Forensic Readiness Playbook | SB Cyber Lab" />
+    <meta
+      property="og:description"
+      content="A practical, step-by-step playbook to make investigations possible: reliable telemetry, evidence integrity, retention, and response workflows."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sbcyberlab.com/playbooks/forensic-readiness.html" />
+    <meta property="og:image" content="https://sbcyberlab.com/assets/icon-512.png" />
+
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles.css?v=4" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="SB Cyber Lab home">
+          <img src="/assets/sbcyberlab_logo.png" alt="SB Cyber Lab logo" class="brand-logo" width="240" height="54" />
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="/insights.html">Insights</a></li>
+            <li><a href="/playbooks.html">Playbooks</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a class="btn btn-small" href="/#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero insights-hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Playbook</p>
+            <h1>Forensic readiness in SaaS systems</h1>
+            <p class="lead">
+              If evidence is missing, inconsistent, or untrustworthy, investigations fail. This playbook gives you a practical baseline to collect, protect,
+              and use evidence under pressure.
+            </p>
+            <div class="hero-cta">
+              <a class="btn" href="/#contact">Request a readiness sprint</a>
+              <a class="btn btn-ghost" href="/playbooks.html">Back to playbooks</a>
+            </div>
+          </div>
+
+          <div class="hero-card" role="region" aria-label="At a glance">
+            <h2 class="card-title">At a glance</h2>
+            <ul class="checklist">
+              <li>Who: Lean teams running SaaS / cloud apps.</li>
+              <li>Outcome: Evidence you can trust.</li>
+              <li>Time: 1–3 days baseline, then iterate.</li>
+            </ul>
+            <p class="note">Version 1.0 — baseline-first.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>What you’ll have at the end</h2>
+            <p>A defensible readiness baseline: reliable telemetry, preserved evidence, and an incident workflow that works in real life.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <h3>Baseline deliverables</h3>
+              <ul class="bullets">
+                <li>Evidence-ready telemetry checklist (what to log, where, and why).</li>
+                <li>Time sync + integrity controls (timestamps you can defend).</li>
+                <li>Retention + access control rules (who can touch evidence).</li>
+                <li>Workflow: preserve first, then analyze (to avoid contamination).</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>Prerequisites</h2>
+            <p>Keep this minimal. Don’t wait for perfection.</p>
+          </div>
+
+          <div class="insights-grid">
+            <article class="insight-card">
+              <h3>Minimum prerequisites</h3>
+              <ul class="bullets">
+                <li>Central log storage location (even if basic).</li>
+                <li>Defined owners for platform, identity, and incidents.</li>
+                <li>Time synchronization (NTP) across systems.</li>
+              </ul>
+            </article>
+
+            <article class="insight-card">
+              <h3>Recommended</h3>
+              <ul class="bullets">
+                <li>Separate “security log” access role.</li>
+                <li>Immutable storage or write-once pattern for key logs.</li>
+                <li>Documented incident severity levels + escalation path.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>Step-by-step playbook</h2>
+            <p>Implement in order. Each step increases readiness even if you stop early.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <h3>Step 1 — Define “evidence” and your questions</h3>
+              <ul class="bullets">
+                <li>Write 5–10 investigation questions you must answer fast (e.g., “Who accessed what, when, from where?”).</li>
+                <li>Map questions to log sources: identity, endpoint, email, admin, application, cloud control plane.</li>
+              </ul>
+
+              <h3>Step 2 — Collect high-signal telemetry</h3>
+              <ul class="bullets">
+                <li>Identity: sign-in, MFA, role changes, privileged actions.</li>
+                <li>Endpoint: process + auth events for critical systems.</li>
+                <li>Email: mailbox rules, forwarding, suspicious login, admin changes.</li>
+                <li>Admin: configuration changes, API key creation, permission grants.</li>
+              </ul>
+
+              <h3>Step 3 — Make timestamps defensible</h3>
+              <ul class="bullets">
+                <li>Enforce NTP across all systems.</li>
+                <li>Store timezone consistently (UTC recommended) and keep source timezone metadata.</li>
+              </ul>
+
+              <h3>Step 4 — Protect integrity + access</h3>
+              <ul class="bullets">
+                <li>Restrict who can read and who can delete logs.</li>
+                <li>Enable audit logs for the logging platform itself.</li>
+                <li>Consider immutable storage for key evidence streams.</li>
+              </ul>
+
+              <h3>Step 5 — Retention rules that match reality</h3>
+              <ul class="bullets">
+                <li>Minimum baseline: 30–90 days searchable + longer archive if feasible.</li>
+                <li>Define exceptions for high-value systems (identity/admin often deserve longer).</li>
+              </ul>
+
+              <h3>Step 6 — Incident workflow: preserve first</h3>
+              <ul class="bullets">
+                <li>Create an “evidence preservation” checklist to run before remediation.</li>
+                <li>Separate containment actions from investigation activities where possible.</li>
+                <li>Log every action taken during incident response (who/what/when/why).</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>Quick checklist</h2>
+            <p>Use this for monthly reviews.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <ul class="checklist">
+                <li>NTP is enforced across systems (time is trustworthy).</li>
+                <li>Identity + admin logs are collected and centralized.</li>
+                <li>Logging platform has its own audit logs enabled.</li>
+                <li>Access is least-privilege; deletion is restricted.</li>
+                <li>Retention is defined and tested (not assumed).</li>
+                <li>Evidence preservation checklist exists and is used.</li>
+                <li>Tabletop run done at least quarterly.</li>
+              </ul>
+
+              <p class="muted">
+                Need help implementing this in your stack?
+                <a class="link-strong" href="/#contact">Request a consultation</a>.
+              </p>
+            </article>
+          </div>
+
+          <div class="inline-actions">
+            <a class="btn btn-ghost btn-small" href="/playbooks.html">Back to playbooks</a>
+            <a class="btn btn-ghost btn-small" href="/insights.html">Browse insights</a>
+            <a class="btn btn-ghost btn-small" href="#main">Back to top</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> SB Cyber Lab. All rights reserved.</p>
+        <p class="muted">
+          <a href="/">Home</a>
+          &nbsp;•&nbsp;
+          <a href="/privacy.html">Privacy</a>
+          &nbsp;•&nbsp;
+          <a href="/terms.html">Terms</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

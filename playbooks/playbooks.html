@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Playbooks | SB Cyber Lab</title>
+
+    <meta
+      name="description"
+      content="Actionable cybersecurity playbooks: minimum viable logging, forensic readiness, secure SDLC, and incident-ready operations for lean teams."
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://sbcyberlab.com/playbooks.html" />
+
+    <meta property="og:site_name" content="SB Cyber Lab" />
+    <meta property="og:title" content="SB Cyber Lab — Playbooks" />
+    <meta
+      property="og:description"
+      content="Step-by-step guides and checklists for secure delivery, forensic readiness, and practical incident preparedness."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sbcyberlab.com/playbooks.html" />
+    <meta property="og:image" content="https://sbcyberlab.com/assets/icon-512.png" />
+
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles.css?v=4" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="SB Cyber Lab home">
+          <img
+            src="/assets/sbcyberlab_logo.png"
+            alt="SB Cyber Lab logo"
+            class="brand-logo"
+            width="240"
+            height="54"
+          />
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="/insights.html">Insights</a></li>
+            <li><a href="/playbooks.html" aria-current="page">Playbooks</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a class="btn btn-small" href="/#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero insights-hero" id="top">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Playbooks</p>
+            <h1>
+              Practical guides.<br />
+              Built to execute.
+            </h1>
+
+            <p class="lead">
+              Step-by-step implementation guides, checklists, and templates—designed for leaders and lean teams who need defensible security basics without
+              bureaucracy.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn" href="/#contact">Request implementation support</a>
+              <a class="btn btn-ghost" href="/insights.html">Browse insights</a>
+            </div>
+          </div>
+
+          <div class="hero-card" role="region" aria-label="How to use playbooks">
+            <h2 class="card-title">How to use these</h2>
+            <ul class="checklist">
+              <li>Start with the baseline checklist.</li>
+              <li>Implement in small, reversible steps.</li>
+              <li>Assign owners for alerts and actions.</li>
+              <li>Review monthly and tighten over time.</li>
+            </ul>
+            <p class="note">Simple. Measurable. Repeatable.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Playbooks library</h2>
+            <p>Evergreen guides you can run. Updated as the field evolves.</p>
+          </div>
+
+          <div class="insights-grid">
+            <article class="insight-card" id="logging">
+              <p class="kicker">Playbook</p>
+              <h3>Minimum viable logging (CISA-aligned)</h3>
+              <p class="muted">A practical baseline: what to collect, where to centralize it, and which alerts matter first.</p>
+              <ul class="bullets">
+                <li>High-signal identity, endpoint, email, and admin logging.</li>
+                <li>Retention + access control + integrity basics.</li>
+                <li>A small alert set with owners and next steps.</li>
+              </ul>
+              <p class="muted">
+                <a class="link-strong" href="/playbooks/logging.html">Open playbook →</a>
+              </p>
+            </article>
+
+            <article class="insight-card" id="forensic-readiness">
+              <p class="kicker">Playbook</p>
+              <h3>Forensic readiness in SaaS systems</h3>
+              <p class="muted">Make evidence reliable before incidents happen: logging, integrity, retention, and response workflow readiness.</p>
+              <ul class="bullets">
+                <li>Evidence-ready telemetry checklist.</li>
+                <li>Integrity + time + access controls.</li>
+                <li>Incident workflow: preserve first, then analyze.</li>
+              </ul>
+              <p class="muted">
+                <a class="link-strong" href="/playbooks/forensic-readiness.html">Open playbook →</a>
+              </p>
+            </article>
+
+            <article class="insight-card" id="secure-sdlc">
+              <p class="kicker">Playbook</p>
+              <h3>Secure SDLC for lean teams</h3>
+              <p class="muted">A lightweight Secure SDLC that fits real CI/CD, with measurable gates (not security theater).</p>
+              <ul class="bullets">
+                <li>Minimum viable controls per stage.</li>
+                <li>Threat modeling that stays repeatable.</li>
+                <li>Metrics you can track without overhead.</li>
+              </ul>
+              <p class="muted">
+                <a class="link-strong" href="/playbooks/secure-sdlc.html">Open playbook →</a>
+              </p>
+            </article>
+          </div>
+
+          <div class="inline-actions">
+            <a class="btn btn-ghost btn-small" href="/#services">View services</a>
+            <a class="btn btn-ghost btn-small" href="/#contact">Contact</a>
+            <a class="btn btn-ghost btn-small" href="#top">Back to top</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> SB Cyber Lab. All rights reserved.</p>
+        <p class="muted">
+          <a href="/">Home</a>
+          &nbsp;•&nbsp;
+          <a href="/privacy.html">Privacy</a>
+          &nbsp;•&nbsp;
+          <a href="/terms.html">Terms</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

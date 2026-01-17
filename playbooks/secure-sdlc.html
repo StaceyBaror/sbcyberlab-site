@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Secure SDLC Playbook | SB Cyber Lab</title>
+
+    <meta
+      name="description"
+      content="Secure SDLC playbook for lean teams: lightweight controls, CI/CD gates, threat modeling that stays repeatable, and metrics you can track."
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://sbcyberlab.com/playbooks/secure-sdlc.html" />
+
+    <meta property="og:site_name" content="SB Cyber Lab" />
+    <meta property="og:title" content="Secure SDLC Playbook | SB Cyber Lab" />
+    <meta
+      property="og:description"
+      content="A practical Secure SDLC baseline for lean teams: repeatable threat modeling, CI/CD security gates, and measurable controls."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sbcyberlab.com/playbooks/secure-sdlc.html" />
+    <meta property="og:image" content="https://sbcyberlab.com/assets/icon-512.png" />
+
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles.css?v=4" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="SB Cyber Lab home">
+          <img src="/assets/sbcyberlab_logo.png" alt="SB Cyber Lab logo" class="brand-logo" width="240" height="54" />
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="/insights.html">Insights</a></li>
+            <li><a href="/playbooks.html">Playbooks</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a class="btn btn-small" href="/#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero insights-hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Playbook</p>
+            <h1>Secure SDLC for lean teams</h1>
+            <p class="lead">
+              A Secure SDLC that fits real delivery: small, measurable controls embedded in CI/CD—without slowing teams down or creating “checkbox security.”
+            </p>
+            <div class="hero-cta">
+              <a class="btn" href="/#contact">Request an SDLC review</a>
+              <a class="btn btn-ghost" href="/playbooks.html">Back to playbooks</a>
+            </div>
+          </div>
+
+          <div class="hero-card" role="region" aria-label="At a glance">
+            <h2 class="card-title">At a glance</h2>
+            <ul class="checklist">
+              <li>Who: Product + engineering teams.</li>
+              <li>Outcome: Repeatable gates + metrics.</li>
+              <li>Time: 1 week baseline, then iterate.</li>
+            </ul>
+            <p class="note">Version 1.0 — baseline-first.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>What you’ll have at the end</h2>
+            <p>A minimum viable Secure SDLC: clear gates, lightweight threat modeling, and security signals you can measure.</p>
+          </div>
+
+          <div class="insights-grid">
+            <article class="insight-card">
+              <h3>Deliverables</h3>
+              <ul class="bullets">
+                <li>Secure SDLC stages and “done” definitions.</li>
+                <li>CI/CD security gates (SAST/deps/secrets/IaC) aligned to risk.</li>
+                <li>Threat modeling mini-template that teams actually use.</li>
+                <li>Metrics: coverage, findings, remediation time, release hygiene.</li>
+              </ul>
+            </article>
+
+            <article class="insight-card">
+              <h3>Core principle</h3>
+              <p class="muted">
+                Don’t try to do everything. Do a small number of controls extremely well, make them repeatable, then expand. Most teams fail by starting too big.
+              </p>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>Step-by-step playbook</h2>
+            <p>Implement in order. Each step provides value on its own.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <h3>Step 1 — Define your “crown jewels”</h3>
+              <ul class="bullets">
+                <li>List critical data + systems (identity, payments, admin, production pipelines).</li>
+                <li>Decide what must never ship broken (auth, secrets, critical vulns).</li>
+              </ul>
+
+              <h3>Step 2 — Add minimum CI/CD gates</h3>
+              <ul class="bullets">
+                <li>Secrets scanning (block on secrets).</li>
+                <li>Dependency scanning (block on critical known exploited / critical CVEs).</li>
+                <li>SAST (warn first, then block on a short ruleset).</li>
+                <li>IaC scanning (block on highest-risk misconfigs).</li>
+              </ul>
+
+              <h3>Step 3 — Make threat modeling tiny and repeatable</h3>
+              <ul class="bullets">
+                <li>Every new “major feature” gets a 30-minute threat model.</li>
+                <li>Capture: assets, entry points, trust boundaries, abuse cases, mitigations.</li>
+              </ul>
+
+              <h3>Step 4 — Define secure defaults</h3>
+              <ul class="bullets">
+                <li>Logging: security events are captured (auth, admin, key actions).</li>
+                <li>Auth: MFA for admin, least privilege, no shared accounts.</li>
+                <li>Secrets: never in code; rotated; scoped.</li>
+                <li>Deployment: immutable builds, versioned artifacts.</li>
+              </ul>
+
+              <h3>Step 5 — Add “evidence-ready” logging to SDLC</h3>
+              <ul class="bullets">
+                <li>Ship an audit trail for major actions.</li>
+                <li>Document log fields and retention before production.</li>
+              </ul>
+
+              <h3>Step 6 — Track metrics that matter</h3>
+              <ul class="bullets">
+                <li>Time-to-fix for high severity findings.</li>
+                <li>Release hygiene: percentage of releases passing all gates.</li>
+                <li>Coverage: repositories with baseline controls enabled.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>Quick checklist</h2>
+            <p>Use this to validate the baseline across teams.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <ul class="checklist">
+                <li>Secrets scanning blocks merges.</li>
+                <li>Dependency scanning blocks critical known exploited issues.</li>
+                <li>IaC scanning blocks high-risk misconfigs.</li>
+                <li>Threat modeling template exists and is used.</li>
+                <li>Security event logging is defined before production.</li>
+                <li>Metrics are tracked monthly and reviewed.</li>
+              </ul>
+
+              <p class="muted">
+                Want this mapped to your exact pipelines?
+                <a class="link-strong" href="/#contact">Request a consultation</a>.
+              </p>
+            </article>
+          </div>
+
+          <div class="inline-actions">
+            <a class="btn btn-ghost btn-small" href="/playbooks.html">Back to playbooks</a>
+            <a class="btn btn-ghost btn-small" href="/insights.html">Browse insights</a>
+            <a class="btn btn-ghost btn-small" href="#main">Back to top</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> SB Cyber Lab. All rights reserved.</p>
+        <p class="muted">
+          <a href="/">Home</a>
+          &nbsp;•&nbsp;
+          <a href="/privacy.html">Privacy</a>
+          &nbsp;•&nbsp;
+          <a href="/terms.html">Terms</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
