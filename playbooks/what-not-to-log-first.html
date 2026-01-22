@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What NOT to log first (SMBs) | SB Cyber Lab Playbook</title>
+
+    <meta
+      name="description"
+      content="A practical playbook for SMBs on what not to log first—avoid noise, start evidence-first, and build a defensible logging baseline."
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://sbcyberlab.com/playbooks/what-not-to-log-first.html" />
+
+    <meta property="og:site_name" content="SB Cyber Lab" />
+    <meta property="og:title" content="What NOT to log first (SMBs) — Playbook" />
+    <meta
+      property="og:description"
+      content="Avoid logging noise. Start with evidence-first signals (identity, endpoint, email, admin) to answer what happened—fast."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sbcyberlab.com/playbooks/what-not-to-log-first.html" />
+    <meta property="og:image" content="https://sbcyberlab.com/assets/icon-512.png" />
+
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles.css?v=4" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="SB Cyber Lab home">
+          <img
+            src="/assets/sbcyberlab_logo.png"
+            alt="SB Cyber Lab logo"
+            class="brand-logo"
+            width="240"
+            height="54"
+          />
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/playbooks/">Playbooks</a></li>
+            <li><a href="/insights.html">Insights</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a class="btn btn-small" href="/#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero insights-hero" id="top">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Playbook</p>
+            <h1>What NOT to log first (SMBs)</h1>
+            <p class="lead">
+              Stop wasting time and budget on noise. This playbook helps you prioritize logs that preserve evidence of action—so you can answer
+              <strong>what happened</strong> quickly during incidents.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn" href="/#contact">Request a consultation</a>
+              <a class="btn btn-ghost" href="/playbooks/">Browse playbooks</a>
+              <a class="btn btn-ghost" href="/playbooks/logging.html">Minimum viable logging</a>
+            </div>
+          </div>
+
+          <div class="hero-card" role="region" aria-label="Quick summary">
+            <h2 class="card-title">Outcome</h2>
+            <ul class="checklist">
+              <li>Avoid log volume without visibility</li>
+              <li>Start with evidence-first signals</li>
+              <li>Reach a defensible baseline quickly</li>
+            </ul>
+            <p class="note">Designed for lean teams.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>When to use this</h2>
+            <p>Use this playbook if you are setting up logging from scratch, migrating tools, or dealing with alert fatigue.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <p class="kicker">Goal</p>
+              <h3>Answer the only incident question that matters</h3>
+              <p class="muted">
+                Your logging program should reliably reconstruct:
+                <strong>who did what, from where, with what access</strong>.
+              </p>
+              <ul class="bullets">
+                <li>Who: identity and permissions</li>
+                <li>What: actions and changes</li>
+                <li>Where: device, IP, location, tenant/context</li>
+                <li>Access: roles, elevation, admin activity</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>What NOT to do first</h2>
+            <p>These are common failure patterns. They create noise, not answers.</p>
+          </div>
+
+          <div class="insights-grid">
+            <article class="insight-card">
+              <p class="kicker">Avoid</p>
+              <h3>“Log everything” configurations</h3>
+              <p class="muted">You will collect volume without prioritization. Investigations slow down and alert fatigue rises.</p>
+            </article>
+
+            <article class="insight-card">
+              <p class="kicker">Avoid</p>
+              <h3>Verbose app debug logs as a starting point</h3>
+              <p class="muted">Debug logs are not the same as security evidence. Start with user and admin actions first.</p>
+            </article>
+
+            <article class="insight-card">
+              <p class="kicker">Avoid</p>
+              <h3>Dashboards before questions</h3>
+              <p class="muted">If you do not define incident questions first, dashboards become cosmetic reporting.</p>
+            </article>
+
+            <article class="insight-card">
+              <p class="kicker">Avoid</p>
+              <h3>SIEM tuning before scope and ownership</h3>
+              <p class="muted">Rules without ownership and response actions produce alerts that no one closes.</p>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>What to do first (evidence-first sequence)</h2>
+            <p>Follow this order. It gets you to a defensible baseline fast.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <p class="kicker">Step-by-step</p>
+              <h3>Four signals first</h3>
+              <ol class="bullets">
+                <li><strong>Identity</strong>: sign-ins, MFA, lockouts, risky login indicators, privilege changes</li>
+                <li><strong>Endpoint</strong>: malware/quarantine events, new admin group membership, suspicious process execution (high-signal)</li>
+                <li><strong>Email</strong>: forwarding rules, mailbox delegation, unusual access, suspicious link/attachment indicators</li>
+                <li><strong>Admin &amp; audit</strong>: changes to roles, policies, logging settings, and critical configuration</li>
+              </ol>
+
+              <p class="muted">
+                Once these are stable, expand into application logs and cloud service logs—selectively, based on incident questions.
+              </p>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>Minimum alert set (starter pack)</h2>
+            <p>Start small. Each alert must have an owner and a next action.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <p class="kicker">Alerts</p>
+              <h3>High-signal alerts you can actually operate</h3>
+              <ul class="bullets">
+                <li>New admin account created or privileged role assigned</li>
+                <li>Multiple failed logins followed by a success</li>
+                <li>MFA disabled or authentication policy weakened</li>
+                <li>Email forwarding rule created or mailbox delegation granted</li>
+                <li>Suspicious sign-in location or impossible travel pattern</li>
+                <li>Endpoint malware detected, quarantined, or protections disabled</li>
+                <li>Logs stop arriving (visibility gap)</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>Definition of done</h2>
+            <p>You are not “done” when logs exist. You are done when they produce answers.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <p class="kicker">Done when</p>
+              <h3>A defensible baseline is in place</h3>
+              <ul class="bullets">
+                <li>You can reconstruct a user/admin action timeline in under 30 minutes.</li>
+                <li>Log access is restricted and auditable.</li>
+                <li>Retention is set and matches business/regulatory needs.</li>
+                <li>Every alert has an owner and a written next step.</li>
+                <li>You have run at least one tabletop using your logs to answer “what happened?”</li>
+              </ul>
+              <p class="muted">
+                If you want the full baseline, use:
+                <a class="link-strong" href="/playbooks/logging.html">Minimum viable logging for small teams →</a>
+              </p>
+            </article>
+          </div>
+
+          <div class="inline-actions">
+            <a class="btn btn-ghost btn-small" href="/playbooks/">Back to playbooks</a>
+            <a class="btn btn-ghost btn-small" href="/insights.html">Back to insights</a>
+            <a class="btn btn-ghost btn-small" href="#top">Back to top</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> SB Cyber Lab. All rights reserved.</p>
+        <p class="muted">
+          <a href="/">Home</a>
+          &nbsp;•&nbsp;
+          <a href="/privacy.html">Privacy</a>
+          &nbsp;•&nbsp;
+          <a href="/terms.html">Terms</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
