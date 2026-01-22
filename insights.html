@@ -35,7 +35,13 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="/" aria-label="SB Cyber Lab home">
-          <img src="/assets/sbcyberlab_logo.png" alt="SB Cyber Lab logo" class="brand-logo" width="240" height="54" />
+          <img
+            src="/assets/sbcyberlab_logo.png"
+            alt="SB Cyber Lab logo"
+            class="brand-logo"
+            width="240"
+            height="54"
+          />
         </a>
 
         <nav class="nav" aria-label="Primary">
@@ -44,7 +50,6 @@
             <span class="nav-toggle-bars" aria-hidden="true"></span>
           </button>
 
-          <!-- UPDATED: added Playbooks -->
           <ul id="nav-menu" class="nav-menu">
             <li><a href="/#services">Services</a></li>
             <li><a href="/playbooks/">Playbooks</a></li>
@@ -69,7 +74,6 @@
               Short, high-signal guidance on secure delivery, forensic readiness, and incident preparedness—built for leaders and lean teams.
             </p>
 
-            <!-- UPDATED: added Browse playbooks -->
             <div class="hero-cta">
               <a class="btn" href="/#contact">Request a consultation</a>
               <a class="btn btn-ghost" href="/#services">Explore services</a>
@@ -148,7 +152,7 @@
 
           <div class="section-head compact">
             <h2>More insights</h2>
-            <p>Short reads for lean teams building readiness without a security department.</p>
+            <p>Short reads for leaders and lean teams building readiness without a security department.</p>
           </div>
 
           <div class="insights-grid single">
@@ -156,15 +160,40 @@
               <p class="kicker">Insight</p>
               <h3>Minimum viable logging for small teams (CISA-aligned)</h3>
               <p class="muted">
-                A practical baseline for security event collection, centralized storage, and alerts—designed for organizations without a dedicated security team.
+                A defensible baseline for organizations that need answers during incidents—without enterprise tooling or security headcount.
               </p>
               <ul class="bullets">
-                <li>Collect high-signal identity, endpoint, email, and admin activity.</li>
-                <li>Centralize logs with clear retention, access control, and integrity.</li>
-                <li>Deploy a small alert set with owners and next steps.</li>
+                <li>Prioritize identity, endpoint, email, and administrative activity.</li>
+                <li>Centralize logs with retention, access control, and integrity in place.</li>
+                <li>Define a small alert set with clear ownership and response actions.</li>
               </ul>
               <p class="muted">
-                <a class="link-strong" href="/playbooks/logging.html">Read the full playbook →</a>
+                <a class="link-strong" href="/playbooks/logging.html">Read the logging playbook →</a>
+              </p>
+            </article>
+
+            <article class="insight-card" id="what-not-to-log-first">
+              <p class="kicker">Insight</p>
+              <h3>What NOT to log first (SMBs)</h3>
+              <p class="muted">
+                Most logging failures are not caused by missing tools. They are caused by logging without a question.
+              </p>
+              <p class="muted">
+                If your first move is “log everything,” you create volume without visibility—and still cannot explain what happened when it matters.
+              </p>
+              <p class="muted"><strong>Evidence-first logging</strong> starts by preserving action:</p>
+              <ul class="bullets">
+                <li>Identity events (authentication, MFA, privilege changes)</li>
+                <li>Endpoint activity (security-relevant host actions)</li>
+                <li>Email behavior (access, forwarding, abuse indicators)</li>
+                <li>Administrative and audit changes</li>
+              </ul>
+              <p class="muted">
+                The objective is simple and non-negotiable:
+                <strong>reconstruct who did what, from where, with what access</strong>—quickly and reliably.
+              </p>
+              <p class="muted">
+                <a class="link-strong" href="/playbooks/logging.html">Open the logging playbook →</a>
               </p>
             </article>
           </div>
@@ -191,7 +220,13 @@
               <p class="muted pubs-links">
                 <a class="link-strong" href="/#contact">Request full list</a>
                 <span aria-hidden="true"> • </span>
-                <a class="link-strong" href="https://orcid.org/0000-0003-0523-2751" target="_blank" rel="noopener noreferrer">ORCID</a>
+                <a
+                  class="link-strong"
+                  href="https://orcid.org/0000-0003-0523-2751"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >ORCID</a
+                >
               </p>
             </div>
 
