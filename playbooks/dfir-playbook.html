@@ -3,28 +3,29 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Minimum Viable Logging for Small Teams | SB Cyber Lab</title>
+    <title>DFIR First 60 Minutes (Lean Teams) | SB Cyber Lab Playbook</title>
 
     <meta
       name="description"
-      content="Minimum viable centralized logging for small teams: what to collect, how to centralize, and how to turn logs into action."
+      content="A practical DFIR playbook for lean teams: what to do in the first 60 minutes of an incident to preserve evidence, contain safely, and keep control."
     />
     <meta name="robots" content="index,follow" />
-    <link rel="canonical" href="https://sbcyberlab.com/logging.html" />
+    <link rel="canonical" href="https://sbcyberlab.com/playbooks/dfir-playbook.html" />
 
     <meta property="og:site_name" content="SB Cyber Lab" />
-    <meta property="og:title" content="Minimum Viable Logging for Small Teams" />
+    <meta property="og:title" content="DFIR First 60 Minutes (Lean Teams) — Playbook" />
     <meta
       property="og:description"
-      content="A practical approach to centralized security logging and alerting that small teams can run."
+      content="Preserve first, then contain. A step-by-step DFIR playbook that lean teams can run under pressure."
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://sbcyberlab.com/logging.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sbcyberlab.com/playbooks/dfir-playbook.html" />
     <meta property="og:image" content="https://sbcyberlab.com/assets/icon-512.png" />
 
     <link rel="icon" href="/assets/favicon.ico" />
     <link rel="icon" type="image/png" href="/assets/favicon-32.png" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
     <link rel="stylesheet" href="/styles.css?v=4" />
   </head>
 
@@ -34,7 +35,13 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="/" aria-label="SB Cyber Lab home">
-          <img src="/assets/sbcyberlab_logo.png" alt="SB Cyber Lab logo" class="brand-logo" width="240" height="54" />
+          <img
+            src="/assets/sbcyberlab_logo.png"
+            alt="SB Cyber Lab logo"
+            class="brand-logo"
+            width="240"
+            height="54"
+          />
         </a>
 
         <nav class="nav" aria-label="Primary">
@@ -44,8 +51,10 @@
           </button>
 
           <ul id="nav-menu" class="nav-menu">
-            <li><a href="/#services">Services</a></li>
             <li><a href="/insights.html">Insights</a></li>
+            <li><a href="/playbooks/" aria-current="page">Playbooks</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#about">About</a></li>
             <li><a class="btn btn-small" href="/#contact">Contact</a></li>
           </ul>
         </nav>
@@ -53,37 +62,39 @@
     </header>
 
     <main id="main">
-      <section class="hero insights-hero">
+      <section class="hero insights-hero" id="top">
         <div class="container hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow">Insight</p>
-            <h1>Minimum viable logging for small teams</h1>
+            <p class="eyebrow">Playbook</p>
+            <h1>DFIR: First 60 minutes (lean teams)</h1>
             <p class="lead">
-              You don’t need a SOC to be prepared. You need the right signals, captured consistently, stored centrally, and tied to clear actions.
+              When an incident hits, speed matters — but <strong>evidence</strong> matters more. This playbook helps lean teams preserve evidence, contain
+              safely, and keep leadership in control.
             </p>
 
             <div class="hero-cta">
-              <a class="btn" href="/#contact">Request implementation</a>
-              <a class="btn btn-ghost" href="/insights.html">Back to Insights</a>
+              <a class="btn" href="/#contact">Request incident support</a>
+              <a class="btn btn-ghost" href="/playbooks/">Browse playbooks</a>
+              <a class="btn btn-ghost" href="/playbooks/forensic-readiness.html">Forensic readiness</a>
             </div>
 
             <ul class="trust" aria-label="What this delivers">
-              <li>Clarity</li>
-              <li>Readiness</li>
+              <li>Control</li>
+              <li>Traceability</li>
+              <li>Defensible actions</li>
               <li>Calm under pressure</li>
-              <li>Evidence you can use</li>
             </ul>
           </div>
 
           <div class="hero-card" role="region" aria-label="At a glance">
             <h2 class="card-title">At a glance</h2>
             <ul class="checklist">
-              <li>Collect high-signal logs</li>
-              <li>Centralize + retain properly</li>
-              <li>Create a small alert set</li>
-              <li>Document response steps</li>
+              <li>Preserve first, then contain</li>
+              <li>Stop the spread without destroying evidence</li>
+              <li>Executive comms + decision log</li>
+              <li>Minimal data collection checklist</li>
             </ul>
-            <p class="note">Small scope. High leverage.</p>
+            <p class="note">Designed for real life.</p>
           </div>
         </div>
       </section>
@@ -93,154 +104,132 @@
       <section class="section">
         <div class="container">
           <div class="section-head">
-            <h2>The real problem</h2>
-            <p>Most teams don’t fail because they lacked a tool. They fail because they lacked usable evidence.</p>
+            <h2>When to use this</h2>
+            <p>Use this playbook when you suspect compromise and need to act fast without making the situation worse.</p>
           </div>
 
-          <div class="insight-card">
-            <p class="muted">
-              After an incident, the first question is always the same: <strong>“What happened?”</strong>
-              If your logs are scattered, overwritten, or incomplete, you lose time—and confidence—fast.
-            </p>
-            <p class="muted">
-              Minimum viable logging is a tight, realistic baseline that gives you
-              <strong>visibility</strong>, <strong>traceability</strong>, and <strong>actionable alerts</strong>—without building a security department.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <hr class="section-divider" />
-
-      <section class="section alt">
-        <div class="container">
-          <div class="section-head">
-            <h2>What to collect first</h2>
-            <p>Start with the signals that answer “who did what, from where, and what changed.”</p>
-          </div>
-
-          <div class="featured">
+          <div class="insights-grid single">
             <article class="insight-card">
-              <p class="kicker">1) Identity</p>
-              <h3>Account activity + admin actions</h3>
-              <p class="muted">Log sign-ins, MFA changes, privilege changes, and risky authentications.</p>
+              <p class="kicker">Trigger</p>
+              <h3>Run this when you see</h3>
               <ul class="bullets">
-                <li>New admin creation / role changes</li>
-                <li>MFA disabled or bypassed</li>
-                <li>Impossible travel / risky sign-in</li>
-              </ul>
-            </article>
-
-            <article class="insight-card">
-              <p class="kicker">2) Endpoint</p>
-              <h3>Security events from devices</h3>
-              <p class="muted">Capture high-signal endpoint events consistently—avoid noise.</p>
-              <ul class="bullets">
-                <li>Malware detections / quarantine</li>
-                <li>Suspicious process execution</li>
-                <li>Local admin changes</li>
-              </ul>
-            </article>
-
-            <article class="insight-card">
-              <p class="kicker">3) Email</p>
-              <h3>Phishing + mailbox anomalies</h3>
-              <p class="muted">Email remains the main entry point for SMB compromise.</p>
-              <ul class="bullets">
-                <li>Forwarding rules created</li>
-                <li>Suspicious inbox access</li>
-                <li>Credential harvesting indicators</li>
-              </ul>
-            </article>
-
-            <article class="insight-card">
-              <p class="kicker">4) Critical systems</p>
-              <h3>Changes, access, and failures</h3>
-              <p class="muted">Capture authentication, configuration changes, and failure patterns on key systems.</p>
-              <ul class="bullets">
-                <li>Repeated failed logins</li>
-                <li>Config changes on key apps</li>
-                <li>Unexpected access spikes</li>
+                <li>Suspicious sign-ins, privilege changes, or MFA resets</li>
+                <li>Email forwarding rules, mailbox delegation, or BEC indicators</li>
+                <li>Endpoint malware detection, EDR alerts, or unusual processes</li>
+                <li>Ransom note, encryption activity, or sudden service outages</li>
               </ul>
             </article>
           </div>
-        </div>
-      </section>
 
-      <hr class="section-divider" />
-
-      <section class="section">
-        <div class="container">
-          <div class="section-head">
-            <h2>Centralize it (without pain)</h2>
-            <p>Central storage + retention + access control. That’s the baseline.</p>
+          <div class="section-head compact">
+            <h2>Principle</h2>
+            <p>Most teams lose the investigation in the first hour. The fix is simple: preserve first, then contain.</p>
           </div>
 
-          <div class="insight-card">
-            <p class="muted">
-              We implement centralized log management using a pragmatic stack (collector + central store + dashboards + alerting),
-              and keep it operator-friendly for teams without a dedicated security function.
-            </p>
-            <p class="muted">
-              Where relevant, we align the baseline to recognized guidance (including <strong>CISA</strong>) and document exactly what’s being collected, where it lives, and who can access it.
-            </p>
-            <ul class="bullets">
-              <li><strong>Retention:</strong> define what stays and for how long (based on risk and budget).</li>
-              <li><strong>Access:</strong> restrict and audit who can view/export evidence.</li>
-              <li><strong>Integrity:</strong> preserve timestamps and reduce opportunities for tampering.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+          <div class="insights-grid">
+            <article class="insight-card">
+              <p class="kicker">Do</p>
+              <h3>Preserve evidence before heavy changes</h3>
+              <p class="muted">Your first moves should improve visibility — not erase it.</p>
+            </article>
 
-      <hr class="section-divider" />
-
-      <section class="section alt">
-        <div class="container">
-          <div class="section-head">
-            <h2>Alerts your team can actually run</h2>
-            <p>Small set. High signal. Each alert has an owner and a next step.</p>
-          </div>
-
-          <div class="insight-card">
-            <ul class="bullets">
-              <li><strong>Admin privilege changes</strong> → verify actor, review session, roll back if needed.</li>
-              <li><strong>Suspicious sign-in</strong> → reset credential, enforce MFA, review activity window.</li>
-              <li><strong>Forwarding rule created</strong> → remove rule, review mailbox access, notify user.</li>
-              <li><strong>Malware detection</strong> → isolate endpoint, capture triage artifacts, document timeline.</li>
-            </ul>
-            <p class="muted">
-              This is where logging becomes <strong>readiness</strong>: faster response, less confusion, and usable evidence.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <hr class="section-divider" />
-
-      <section class="section">
-        <div class="container">
-          <div class="section-head">
-            <h2>Want it implemented end-to-end?</h2>
-            <p>Installation, configuration, training, and a simple runbook—so the baseline survives real life.</p>
-          </div>
-
-          <div class="pubs-callout">
-            <div>
-              <h3 class="callout-title">Centralized logging baseline (1–2 weeks)</h3>
-              <ul class="pubs-list">
-                <li><span class="pub-tag">Implement</span> log sources + central storage + dashboards</li>
-                <li><span class="pub-tag">Operationalize</span> alert set + response steps</li>
-                <li><span class="pub-tag">Enable</span> team training + a clean handover</li>
-              </ul>
-              <p class="muted pubs-links">
-                <a class="link-strong" href="/#contact">Request a consultation</a>
-                <span aria-hidden="true"> • </span>
-                <a class="link-strong" href="/insights.html">More insights</a>
+            <article class="insight-card">
+              <p class="kicker">Avoid</p>
+              <h3>“Panic fixes” that destroy timelines</h3>
+              <p class="muted">
+                Rebuilding servers, wiping endpoints, or changing everything at once often removes the story you need to prove what happened.
               </p>
-            </div>
+            </article>
+          </div>
 
-            <a class="btn btn-small" href="/#contact">Start here</a>
+          <div class="section-head compact">
+            <h2>Step-by-step: first 60 minutes</h2>
+            <p>Lean, executable, and defensible.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <p class="kicker">0–10 minutes</p>
+              <h3>Stabilize and appoint control</h3>
+              <ul class="bullets">
+                <li>Name an <strong>Incident Lead</strong> and an <strong>Ops Lead</strong> (two people, minimum).</li>
+                <li>Start a <strong>Decision Log</strong>: time, action, who approved, why.</li>
+                <li>Create a dedicated incident channel (internal) and a single executive update thread.</li>
+                <li>Do not “fix everything” yet. First, confirm what you’re seeing.</li>
+              </ul>
+
+              <h4>Decision Log template (copy/paste)</h4>
+              <ul class="bullets">
+                <li><strong>Timestamp (UTC):</strong> what time the decision/action happened</li>
+                <li><strong>Decision / action:</strong> what was approved (exact change)</li>
+                <li><strong>Owner:</strong> who executed it (name/role)</li>
+                <li><strong>Approver:</strong> who authorized it (Incident Lead / Exec)</li>
+                <li><strong>Reason + expected impact:</strong> why we did it + what we expect to happen</li>
+              </ul>
+              <p class="muted">Tip: attach evidence references (log export ID, screenshot, ticket link) whenever possible.</p>
+            </article>
+
+            <article class="insight-card">
+              <p class="kicker">10–25 minutes</p>
+              <h3>Preserve the timeline</h3>
+              <ul class="bullets">
+                <li>Confirm time sync (NTP) and capture current time references.</li>
+                <li>Export high-signal logs: identity, admin/audit, email, endpoint alerts.</li>
+                <li>Snapshot key accounts: recent sign-ins, MFA status, role assignments.</li>
+                <li>Record affected assets: user IDs, hostnames, IPs, mailbox, tenant, timestamps.</li>
+              </ul>
+            </article>
+
+            <article class="insight-card">
+              <p class="kicker">25–45 minutes</p>
+              <h3>Contain without destroying evidence</h3>
+              <ul class="bullets">
+                <li>Isolate affected endpoints (network isolation preferred over wipe/reimage).</li>
+                <li>Disable suspicious sessions/tokens; force re-authentication where needed.</li>
+                <li>Remove malicious email forwarding rules and mailbox delegates (capture before removing).</li>
+                <li>Limit privilege escalation: temporary lock on role changes until control is restored.</li>
+              </ul>
+            </article>
+
+            <article class="insight-card">
+              <p class="kicker">45–60 minutes</p>
+              <h3>Executive posture and next moves</h3>
+              <ul class="bullets">
+                <li>Produce a one-page situation report: what we know, what we don’t, what we did, what’s next.</li>
+                <li>Assign owners for: investigation, containment, communications, and business continuity.</li>
+                <li>Decide: internal-only response vs external IR support and legal/compliance involvement.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>Minimum evidence checklist</h2>
+            <p>Collect only what you can reliably preserve and explain.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <p class="kicker">Checklist</p>
+              <h3>Capture these before major changes</h3>
+              <ul class="bullets">
+                <li>Identity/auth logs (sign-ins, MFA changes, risky sign-ins)</li>
+                <li>Admin/audit logs (role changes, policy edits, logging changes)</li>
+                <li>Email artifacts (forwarding rules, mailbox access, suspicious messages)</li>
+                <li>Endpoint detections (EDR events, malware, suspicious processes)</li>
+                <li>Affected asset list + time window + user list</li>
+                <li>Decision Log (actions and approvals)</li>
+              </ul>
+              <p class="muted">
+                Want the baseline that makes this easier?
+                <a class="link-strong" href="/playbooks/logging.html">Minimum viable logging →</a>
+              </p>
+            </article>
+          </div>
+
+          <div class="inline-actions">
+            <a class="btn btn-ghost btn-small" href="/playbooks/">Back to playbooks</a>
+            <a class="btn btn-ghost btn-small" href="/insights.html">Back to insights</a>
+            <a class="btn btn-ghost btn-small" href="#top">Back to top</a>
           </div>
         </div>
       </section>
@@ -251,6 +240,8 @@
         <p>© <span id="year"></span> SB Cyber Lab. All rights reserved.</p>
         <p class="muted">
           <a href="/">Home</a>
+          &nbsp;•&nbsp;
+          <a href="/playbooks/">Playbooks</a>
           &nbsp;•&nbsp;
           <a href="/insights.html">Insights</a>
           &nbsp;•&nbsp;
