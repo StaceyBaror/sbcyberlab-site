@@ -13,7 +13,7 @@
     <link rel="canonical" href="https://sbcyberlab.com/insights.html" />
 
     <meta property="og:site_name" content="SB Cyber Lab" />
-    <meta property="og:title" content="SB Cyber Lab — Insights" />
+    <meta property="og:title" content="Insights | SB Cyber Lab" />
     <meta
       property="og:description"
       content="High-signal, research-backed guidance on secure architecture, forensic readiness, incident preparedness, and centralized logging."
@@ -51,8 +51,9 @@
           </button>
 
           <ul id="nav-menu" class="nav-menu">
-            <li><a href="/#services">Services</a></li>
+            <li><a href="/insights.html" aria-current="page">Insights</a></li>
             <li><a href="/playbooks/">Playbooks</a></li>
+            <li><a href="/#services">Services</a></li>
             <li><a href="/#about">About</a></li>
             <li><a class="btn btn-small" href="/#contact">Contact</a></li>
           </ul>
@@ -103,7 +104,25 @@
             <p>Start here for the essentials—clear baselines you can actually run.</p>
           </div>
 
-          <div class="insights-grid">
+          
+          <div class="insights-grid featured-grid">
+            <!-- NEW: This week's featured insight -->
+            <article class="insight-card" id="control-first-60">
+              <p class="kicker">Insight</p>
+              <h3>Control in the first 60 minutes</h3>
+              <p class="muted">
+                In the first hour, chaos is the enemy. Control comes from two moves: preserve evidence first, then contain with intent.
+              </p>
+              <ul class="bullets">
+                <li>Assign an Incident Lead + Ops Lead (minimum two owners).</li>
+                <li>Start a Decision Log (time, action, approver, reason).</li>
+                <li>Export high-signal telemetry before “panic fixes.”</li>
+              </ul>
+              <p class="muted">
+                <a class="link-strong" href="/playbooks/dfir-playbook.html">Open the DFIR playbook →</a>
+              </p>
+            </article>
+
             <article class="insight-card" id="secure-sdlc">
               <p class="kicker">Insight</p>
               <h3>Secure SDLC: what “good” looks like</h3>
@@ -114,7 +133,7 @@
                 <li>Controls you can measure (not security theater).</li>
               </ul>
               <p class="muted">
-                Want the blueprint tailored to your environment?
+                Want this tailored to your environment?
                 <a class="link-strong" href="/#contact">Request a consultation</a>.
               </p>
               <p class="muted">
