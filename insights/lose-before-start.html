@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why most teams lose the incident before it starts | SB Cyber Lab</title>
+
+    <meta
+      name="description"
+      content="Most incident failures are decided before the alert: missing logs, unclear ownership, and no decision discipline. Here’s how leaders and lean teams fix it."
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://sbcyberlab.com/insights/lose-before-start.html" />
+
+    <meta property="og:site_name" content="SB Cyber Lab" />
+    <meta property="og:title" content="Why most teams lose the incident before it starts" />
+    <meta
+      property="og:description"
+      content="Most incident failures are decided before the alert: missing logs, unclear ownership, and no decision discipline. Here’s how to fix it."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sbcyberlab.com/insights/lose-before-start.html" />
+    <meta property="og:image" content="https://sbcyberlab.com/assets/icon-512.png" />
+
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles.css?v=4" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="SB Cyber Lab home">
+          <img
+            src="/assets/sbcyberlab_logo.png"
+            alt="SB Cyber Lab logo"
+            class="brand-logo"
+            width="240"
+            height="54"
+          />
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="/insights.html" aria-current="page">Insights</a></li>
+            <li><a href="/playbooks/">Playbooks</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a class="btn btn-small" href="/#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero insights-hero" id="top">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Insight</p>
+            <h1>Why most teams lose the incident before it starts</h1>
+
+            <p class="lead">
+              Most incident “failures” are decided before the first alert: missing telemetry, unclear ownership, and no decision discipline.
+              When pressure hits, teams move fast—and erase the story they need to prove what happened.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn" href="/playbooks/dfir-playbook.html">Open DFIR first 60 minutes</a>
+              <a class="btn btn-ghost" href="/playbooks/logging.html">Minimum viable logging</a>
+              <a class="btn btn-ghost" href="/insights.html">Back to insights</a>
+            </div>
+
+            <ul class="trust" aria-label="What this delivers">
+              <li>Control</li>
+              <li>Traceability</li>
+              <li>Defensible actions</li>
+              <li>Faster recovery</li>
+            </ul>
+          </div>
+
+          <div class="hero-card" role="region" aria-label="At a glance">
+            <h2 class="card-title">Executive summary</h2>
+            <ul class="checklist">
+              <li>Incidents are lost in preparation, not response.</li>
+              <li>Preserve first, then contain—every time.</li>
+              <li>Own the first hour with roles + a decision log.</li>
+              <li>Fix logging baselines before you need them.</li>
+            </ul>
+            <p class="note">Built for lean teams under pressure.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>The real reason teams “lose”</h2>
+            <p>Not because attackers are always brilliant—because teams enter the first hour blind and uncoordinated.</p>
+          </div>
+
+          <div class="insights-grid">
+            <article class="insight-card">
+              <p class="kicker">Failure mode</p>
+              <h3>No usable timeline</h3>
+              <p class="muted">
+                If you can’t reconstruct who did what, from where, and with what access, your investigation becomes guesswork.
+                Guesswork turns into wasted time, bad decisions, and messy recovery.
+              </p>
+            </article>
+
+            <article class="insight-card">
+              <p class="kicker">Failure mode</p>
+              <h3>Containment destroys evidence</h3>
+              <p class="muted">
+                “Fix everything now” feels productive, but it often wipes the very artifacts you need: sessions, logs, mailbox rules, endpoint traces,
+                and administrative change history.
+              </p>
+            </article>
+
+            <article class="insight-card">
+              <p class="kicker">Failure mode</p>
+              <h3>No command structure</h3>
+              <p class="muted">
+                Without a named Incident Lead, an Ops Lead, and a decision log, work becomes parallel chaos.
+                Chaos creates contradictory actions and breaks accountability.
+              </p>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>What winning looks like</h2>
+            <p>It’s not “perfect security.” It’s controlled execution under pressure.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <p class="kicker">Principle</p>
+              <h3>Preserve first, then contain</h3>
+              <p class="muted">
+                The first hour is about protecting the story: evidence, timestamps, access, and decisions.
+                Containment happens—but it must be deliberate and recorded.
+              </p>
+
+              <ul class="bullets">
+                <li><strong>Assign owners:</strong> Incident Lead + Ops Lead (minimum).</li>
+                <li><strong>Start a Decision Log:</strong> time, action, approver, reason, expected impact.</li>
+                <li><strong>Export high-signal telemetry:</strong> identity, admin/audit, email, endpoint detections.</li>
+                <li><strong>Contain safely:</strong> isolate, revoke sessions/tokens, remove malicious rules—capture before change.</li>
+              </ul>
+
+              <p class="muted">
+                If you want the step-by-step sequence, use:
+                <a class="link-strong" href="/playbooks/dfir-playbook.html">DFIR first 60 minutes →</a>
+              </p>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>The baseline you need before the incident</h2>
+            <p>Most teams don’t need more tools. They need a defensible logging baseline with ownership.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <p class="kicker">Baseline</p>
+              <h3>Minimum viable logging (lean teams)</h3>
+              <p class="muted">
+                Start with the telemetry that answers real questions during incidents—then centralize it with retention, access control, and integrity.
+              </p>
+              <ul class="bullets">
+                <li>Identity/auth events (sign-ins, MFA changes, risky sign-ins)</li>
+                <li>Admin/audit events (role changes, policy edits, logging changes)</li>
+                <li>Email behavior (forwarding rules, mailbox access, delegation)</li>
+                <li>Endpoint security detections (EDR alerts, suspicious processes)</li>
+              </ul>
+              <p class="muted">
+                Start here:
+                <a class="link-strong" href="/playbooks/logging.html">Minimum viable logging →</a>
+              </p>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>Executive checklist</h2>
+            <p>Use this to avoid chaos in the first hour.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <p class="kicker">Checklist</p>
+              <h3>First-hour control questions</h3>
+              <ul class="bullets">
+                <li>Who is the Incident Lead and Ops Lead?</li>
+                <li>Do we have a decision log running (with approvals)?</li>
+                <li>What do we know, what don’t we know, and what’s the next evidence to collect?</li>
+                <li>Have we preserved high-signal logs before major changes?</li>
+                <li>Are comms controlled (one internal channel + one executive update thread)?</li>
+              </ul>
+
+              <p class="muted">
+                Need help operationalizing this in your environment?
+                <a class="link-strong" href="/#contact">Request implementation support →</a>
+              </p>
+            </article>
+          </div>
+
+          <div class="inline-actions">
+            <a class="btn btn-ghost btn-small" href="/insights.html">Back to insights</a>
+            <a class="btn btn-ghost btn-small" href="/playbooks/">Browse playbooks</a>
+            <a class="btn btn-ghost btn-small" href="#top">Back to top</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> SB Cyber Lab. All rights reserved.</p>
+        <p class="muted">
+          <a href="/">Home</a>
+          &nbsp;•&nbsp;
+          <a href="/insights.html">Insights</a>
+          &nbsp;•&nbsp;
+          <a href="/playbooks/">Playbooks</a>
+          &nbsp;•&nbsp;
+          <a href="/privacy.html">Privacy</a>
+          &nbsp;•&nbsp;
+          <a href="/terms.html">Terms</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
