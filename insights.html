@@ -22,6 +22,15 @@
     <meta property="og:url" content="https://sbcyberlab.com/insights.html" />
     <meta property="og:image" content="https://sbcyberlab.com/assets/icon-512.png" />
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Insights | SB Cyber Lab" />
+    <meta
+      name="twitter:description"
+      content="High-signal, research-backed guidance on secure architecture, forensic readiness, incident preparedness, and centralized logging."
+    />
+    <meta name="twitter:image" content="https://sbcyberlab.com/assets/icon-512.png" />
+
     <link rel="icon" href="/assets/favicon.ico" />
     <link rel="icon" type="image/png" href="/assets/favicon-32.png" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
@@ -80,6 +89,12 @@
               <a class="btn btn-ghost" href="/#services">Explore services</a>
               <a class="btn btn-ghost" href="/playbooks/">Browse playbooks</a>
             </div>
+
+            <div class="inline-actions" aria-label="Jump links">
+              <a class="btn btn-small btn-ghost" href="#featured">Featured</a>
+              <a class="btn btn-small btn-ghost" href="#more">More insights</a>
+              <a class="btn btn-small btn-ghost" href="#publications">Publications</a>
+            </div>
           </div>
 
           <div class="hero-card" role="region" aria-label="Topics included">
@@ -97,7 +112,7 @@
 
       <hr class="section-divider" />
 
-      <section class="section">
+      <section class="section" id="featured">
         <div class="container">
           <div class="section-head">
             <h2>Featured</h2>
@@ -181,12 +196,31 @@
             </article>
           </div>
 
-          <div class="section-head compact">
+          <div class="section-head compact" id="more">
             <h2>More insights</h2>
             <p>Short reads for leaders and lean teams building readiness without a security department.</p>
           </div>
 
           <div class="insights-grid single">
+            <article class="insight-card" id="incident-ownership">
+              <p class="kicker">New</p>
+              <h3>Incident Ownership: Name the IC and Decision Rights</h3>
+              <p class="muted">
+                If incident ownership isn’t named, you don’t have incident response. You have a meeting.
+                Minimum viable ownership: IC, deputy, written decision rights, evidence owner, and one source of truth.
+              </p>
+              <ul class="bullets">
+                <li>Answer the 10-second test: who leads, who contains, who communicates.</li>
+                <li>Write decision rights (containment, comms, emergency spend).</li>
+                <li>Assign an evidence owner so timelines survive pressure.</li>
+              </ul>
+              <p class="muted">
+                <a class="link-strong" href="/insights/incident-ownership.html">Read the insight →</a>
+                <span aria-hidden="true"> • </span>
+                <a class="link-strong" href="/playbooks/logging.html">Related baseline: minimum viable logging →</a>
+              </p>
+            </article>
+
             <article class="insight-card" id="lose-before-start">
               <p class="kicker">Insight</p>
               <h3>Why most teams lose the incident before it starts</h3>
@@ -259,7 +293,7 @@
 
       <hr class="section-divider" />
 
-      <section class="section about-glow">
+      <section class="section about-glow" id="publications">
         <div class="container">
           <div class="section-head">
             <h2>Publications</h2>
@@ -277,7 +311,9 @@
               <p class="muted pubs-links">
                 <a class="link-strong" href="/#contact">Request full list</a>
                 <span aria-hidden="true"> • </span>
-                <a class="link-strong" href="https://orcid.org/0000-0003-0523-2751" target="_blank" rel="noopener noreferrer">ORCID</a>
+                <a class="link-strong" href="https://orcid.org/0000-0003-0523-2751" target="_blank" rel="noopener noreferrer"
+                  >ORCID</a
+                >
               </p>
             </div>
 

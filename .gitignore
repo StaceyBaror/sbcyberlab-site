@@ -7,3 +7,5 @@ dist/
 .cache/
 .vscode/
 .idea/
+
+.DS_Store

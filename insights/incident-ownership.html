@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Incident Ownership: Name the IC and Decision Rights | SB Cyber Lab</title>
+
+    <meta
+      name="description"
+      content="Minimum viable incident ownership: Incident Commander, decision rights, evidence owner, and single source of truth—so teams act fast without chaos."
+    />
+    <meta name="robots" content="index,follow" />
+    <link
+      rel="canonical"
+      href="https://sbcyberlab.com/insights/incident-ownership.html"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="SB Cyber Lab" />
+    <meta
+      property="og:title"
+      content="Incident Ownership: Name the IC and Decision Rights"
+    />
+    <meta
+      property="og:description"
+      content="Minimum viable incident ownership: Incident Commander, decision rights, evidence owner, and single source of truth—so teams act fast without chaos."
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://sbcyberlab.com/insights/incident-ownership.html"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Incident Ownership: Name the IC and Decision Rights"
+    />
+    <meta
+      name="twitter:description"
+      content="Minimum viable incident ownership: Incident Commander, decision rights, evidence owner, and single source of truth—so teams act fast without chaos."
+    />
+
+    <!-- Site CSS (keep consistent with your site) -->
+    <link rel="stylesheet" href="/assets/css/styles.css?v=1" />
+  </head>
+
+  <body>
+    <!-- HEADER / NAV (match your existing site nav) -->
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="/">SB Cyber Lab</a>
+        <nav class="nav">
+          <a href="/insights.html" aria-current="page">Insights</a>
+          <a href="/playbooks.html">Playbooks</a>
+          <a href="/about.html">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container content">
+      <article class="insight">
+        <header class="insight-header">
+          <p class="kicker">Insight • Forensic Readiness • Incident Response</p>
+          <h1>Incident Ownership: Name the IC and Decision Rights</h1>
+          <p class="lede">
+            If incident ownership isn’t named, you don’t have incident response.
+            You have a meeting.
+          </p>
+        </header>
+
+        <section>
+          <h2>The 10-second test</h2>
+          <p>
+            Most “IR plans” fail because nobody can answer these in 10 seconds:
+          </p>
+          <ul>
+            <li><strong>Who is the Incident Commander?</strong></li>
+            <li><strong>Who can isolate systems?</strong></li>
+            <li><strong>Who can disable accounts / reset creds?</strong></li>
+            <li><strong>Who approves customer / legal comms?</strong></li>
+            <li><strong>Who owns the evidence timeline?</strong></li>
+          </ul>
+          <p>
+            When authority is unclear, speed turns into chaos:
+          </p>
+          <ul>
+            <li>Teams argue instead of acting</li>
+            <li>Work duplicates</li>
+            <li>Evidence gets overwritten</li>
+            <li>Decisions get delayed “until leadership joins”</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Minimum viable ownership</h2>
+          <p>
+            You don’t need a huge org chart. You need <strong>named ownership</strong>
+            and <strong>written decision rights</strong>.
+          </p>
+
+          <div class="callout">
+            <h3>Ownership model (simple, enforceable)</h3>
+            <ul>
+              <li>
+                <strong>Incident Commander (IC)</strong> — single accountable lead
+                for pace, priorities, and decisions.
+              </li>
+              <li>
+                <strong>Deputy IC</strong> — backup + continuity (shift change,
+                fatigue, availability).
+              </li>
+              <li>
+                <strong>Decision rights</strong> — written down for:
+                <ul>
+                  <li>Containment actions (isolate, block, disable, reset)</li>
+                  <li>Customer / legal / regulator communications</li>
+                  <li>Emergency spend (tools, IR support, contractors)</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Evidence owner</strong> — timeline + log preservation + chain-of-custody
+                discipline (so investigations don’t collapse later).
+              </li>
+              <li>
+                <strong>One channel, one doc</strong> — single source of truth.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>What “written decision rights” actually means</h2>
+          <p>
+            The goal is not bureaucracy. The goal is <strong>fewer debates during impact</strong>.
+            Decision rights should specify:
+          </p>
+          <ul>
+            <li>What actions are pre-approved for the IC (and when)</li>
+            <li>What actions require a designated approver (name/role)</li>
+            <li>What evidence must be preserved before changes (where feasible)</li>
+            <li>How exceptions are logged (who, why, time)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Design authority in month zero</h2>
+          <p>
+            If you want control in hour one, you must assign authority in month zero.
+            Make it explicit, rehearse it, and keep it current.
+          </p>
+        </section>
+
+        <section class="related">
+          <h2>Related baseline</h2>
+          <p>
+            <strong>Minimum viable logging</strong> (for evidence that holds up under pressure) →
+            <a href="/playbooks/logging.html">playbooks/logging.html</a>
+          </p>
+        </section>
+
+        <footer class="insight-footer">
+          <p class="tags">
+            #ForensicReadiness #IncidentResponse #CybersecurityLeadership #DFIR #SecurityStrategy
+          </p>
+          <p>
+            Back to <a href="/insights.html">Insights</a>
+          </p>
+        </footer>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="y"></span> SB Cyber Lab</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

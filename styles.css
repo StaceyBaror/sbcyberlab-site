@@ -433,6 +433,108 @@ h3{ font-size:1.07rem; letter-spacing:-0.01em; }
   text-underline-offset: 3px;
 }
 .link-strong:hover{ text-decoration-thickness: 2px; }
+/* Insight article page (single insight content like /insights/incident-ownership.html) */
+.insight{
+  max-width: 80ch;
+  margin: 0 auto;
+}
+
+.insight-header{
+  margin-bottom: 18px;
+}
+
+.insight-header .kicker{
+  margin-bottom: 12px;
+}
+
+.lede{
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 10px 0 0;
+}
+
+/* Article typography */
+.insight h2{
+  margin-top: 20px;
+}
+
+.insight ul{
+  margin: 10px 0 12px;
+  padding-left: 18px;
+}
+.insight li{
+  margin: 8px 0;
+  color: var(--muted);
+}
+.insight ul li::marker{
+  color: var(--gold);
+}
+
+.insight strong{
+  color: var(--navy);
+}
+
+/* Callout panel (reuses your premium card look) */
+.callout{
+  border: 1px solid rgba(11,31,58,0.12);
+  background: rgba(248,250,252,0.92);
+  border-radius: var(--radius);
+  padding: 16px 16px 14px;
+  box-shadow: var(--shadow-soft);
+  margin: 16px 0;
+  position: relative;
+  overflow: hidden;
+}
+.callout::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(26,166,183,0.75), rgba(183,121,31,0.75));
+  opacity: 0.9;
+}
+.callout h3{
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 1.02rem;
+}
+
+/* Nested list inside callouts */
+.callout ul{
+  margin: 10px 0 0;
+}
+
+/* Related baseline section */
+.related{
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+/* Footer + tags */
+.insight-footer{
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.tags{
+  color: rgba(11,31,58,0.78);
+  font-weight: 750;
+  margin: 0 0 10px;
+}
+
+/* Make long insight pages feel great on mobile */
+@media (max-width: 980px){
+  .insight{
+    max-width: 100%;
+  }
+  .lede{
+    font-size: 1.08rem;
+  }
+}
+
+
 
 /* Publications callout */
 .pubs-callout{

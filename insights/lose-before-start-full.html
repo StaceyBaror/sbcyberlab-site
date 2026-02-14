@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why most teams lose the incident before it starts (Full breakdown) | SB Cyber Lab</title>
+
+    <meta
+      name="description"
+      content="Full breakdown: why teams lose incidents before they start—missing high-signal telemetry, containment before preservation, unclear ownership, and no decision discipline. A practical forensic readiness workflow for lean teams."
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://sbcyberlab.com/insights/lose-before-start-full.html" />
+
+    <meta property="og:site_name" content="SB Cyber Lab" />
+    <meta property="og:title" content="Why most teams lose the incident before it starts (Full breakdown)" />
+    <meta
+      property="og:description"
+      content="Forensic readiness is not a tool—it’s a workflow. Full breakdown of failure modes, telemetry priorities, and evidence-first execution in the first hour."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sbcyberlab.com/insights/lose-before-start-full.html" />
+    <meta property="og:image" content="https://sbcyberlab.com/assets/icon-512.png" />
+
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles.css?v=4" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="SB Cyber Lab home">
+          <img
+            src="/assets/sbcyberlab_logo.png"
+            alt="SB Cyber Lab logo"
+            class="brand-logo"
+            width="240"
+            height="54"
+          />
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="/insights.html">Insights</a></li>
+            <li><a href="/playbooks/">Playbooks</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a class="btn btn-small" href="/#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero insights-hero" id="top">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Insight • Full breakdown</p>
+            <h1>Why most teams lose the incident before it starts</h1>
+
+            <p class="lead">
+              <strong>Forensic readiness is not a tool—it’s a workflow.</strong>
+              Most incident failures are decided long before the alert—when evidence is missing, ownership is unclear,
+              and “fast fixes” erase the story you’ll need to prove what happened.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn" href="/insights/lose-before-start.html">Read the executive version</a>
+              <a class="btn btn-ghost" href="/playbooks/dfir-playbook.html">DFIR first 60 minutes</a>
+              <a class="btn btn-ghost" href="/playbooks/logging.html">Minimum viable logging</a>
+            </div>
+
+            <ul class="trust" aria-label="What this delivers">
+              <li>Control</li>
+              <li>Traceability</li>
+              <li>Defensible actions</li>
+              <li>Cleaner timelines</li>
+            </ul>
+          </div>
+
+          <div class="hero-card" role="region" aria-label="At a glance">
+            <h2 class="card-title">At a glance</h2>
+            <ul class="checklist">
+              <li>Logs are not evidence unless they are usable under pressure.</li>
+              <li>Preservation must happen before disruptive containment.</li>
+              <li>Ownership + a decision log is the difference between control and chaos.</li>
+              <li>High-signal telemetry beats “log everything.”</li>
+            </ul>
+            <p class="note">Built for leaders and lean teams.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>The core idea</h2>
+            <p>
+              You don’t “lose the incident” when the attacker wins a technical battle.
+              You lose it when you cannot reconstruct a trustworthy timeline and defend your decisions.
+            </p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <p class="kicker">Definition</p>
+              <h3>What “losing the incident” means</h3>
+              <p class="muted">
+                A lost incident is one where the organization cannot reliably answer:
+                <strong>who did what, when, from where, and with what access</strong>—and cannot show a defensible record
+                of actions taken during response.
+              </p>
+              <ul class="bullets">
+                <li>No usable timeline → investigation becomes guesswork.</li>
+                <li>Guesswork → slow recovery, bad containment, and recurring incidents.</li>
+                <li>Missing decision trail → leaders cannot defend impact, reporting, or actions.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>The silent failures that happen months earlier</h2>
+            <p>These are the patterns that make the first hour chaotic and the investigation fragile.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <p class="kicker">Failure mode</p>
+              <h3>1) Logging without a question in mind</h3>
+              <p class="muted">
+                Many teams “log everything,” but still cannot answer basic forensic questions under stress.
+                Logging becomes a storage problem, not an evidence capability.
+              </p>
+              <ul class="bullets">
+                <li><strong>Questions first:</strong> what do you need to prove during incidents?</li>
+                <li><strong>Signals second:</strong> collect telemetry that answers those questions.</li>
+                <li><strong>Volume last:</strong> add breadth only after you have clarity.</li>
+              </ul>
+              <p class="muted">
+                If your IR starts with “pull whatever logs we can find,” you’re already behind.
+              </p>
+            </article>
+
+            <article class="insight-card">
+              <p class="kicker">Failure mode</p>
+              <h3>2) No high-signal telemetry when it matters</h3>
+              <p class="muted">
+                The most valuable signals are frequently missing, incomplete, or inaccessible—especially in cloud/SaaS environments.
+                High-signal telemetry is the difference between a timeline and a hypothesis.
+              </p>
+              <ul class="bullets">
+                <li><strong>Identity &amp; auth:</strong> sign-ins, MFA events, risky sign-ins, privilege changes</li>
+                <li><strong>Admin &amp; audit:</strong> role changes, policy changes, logging configuration changes</li>
+                <li><strong>Email:</strong> forwarding rules, OAuth grants, mailbox access/delegation</li>
+                <li><strong>Endpoint:</strong> EDR detections, suspicious process execution, persistence signals</li>
+              </ul>
+              <p class="muted">
+                If you can’t prove what changed at the identity/admin layer, you’ll misread the incident.
+              </p>
+            </article>
+
+            <article class="insight-card">
+              <p class="kicker">Failure mode</p>
+              <h3>3) Containment happens before preservation</h3>
+              <p class="muted">
+                Fast containment feels productive—but unmanaged containment frequently erases evidence.
+                In the first hour, your job is to protect the story: evidence, timestamps, access, and decisions.
+              </p>
+              <ul class="bullets">
+                <li>Disable accounts before exporting identity/audit logs → lost context.</li>
+                <li>Revoke tokens/sessions before capturing session evidence → blind spots.</li>
+                <li>Reimage endpoints before collecting artifacts → timeline breaks.</li>
+                <li>“Clean up” mail rules before recording them → intent becomes unverifiable.</li>
+              </ul>
+              <p class="muted">
+                <strong>Rule:</strong> preserve first, then contain with intent—and document both.
+              </p>
+            </article>
+
+            <article class="insight-card">
+              <p class="kicker">Failure mode</p>
+              <h3>4) No owner, no authority, no decision log</h3>
+              <p class="muted">
+                When no one owns the incident, everyone does something—and the organization cannot explain its own actions later.
+                A decision log is a control system: it turns frantic activity into defensible execution.
+              </p>
+              <ul class="bullets">
+                <li><strong>Minimum command structure:</strong> Incident Lead + Ops Lead</li>
+                <li><strong>Decision log fields:</strong> time, action, approver, reason, expected impact</li>
+                <li><strong>Comms control:</strong> one internal channel + one executive update thread</li>
+              </ul>
+            </article>
+
+            <article class="insight-card">
+              <p class="kicker">Failure mode</p>
+              <h3>5) No rehearsal = chaos wins</h3>
+              <p class="muted">
+                Under pressure, people default to habit—not policy. If you haven’t rehearsed collection paths and roles,
+                your first hour becomes improvised—and improvisation damages evidence.
+              </p>
+              <ul class="bullets">
+                <li>Run short tabletop drills (30–45 minutes) focused only on the first hour.</li>
+                <li>Validate you can export the telemetry you claim you have.</li>
+                <li>Make ownership explicit and repeatable.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>The workflow that prevents “lost incidents”</h2>
+            <p>Fast response is good. Fast response without evidence is expensive.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <p class="kicker">Workflow</p>
+              <h3>Evidence-first execution</h3>
+              <ul class="bullets">
+                <li><strong>Assign owners:</strong> Incident Lead + Ops Lead (minimum two).</li>
+                <li><strong>Start the decision log:</strong> keep it running from minute one.</li>
+                <li><strong>Export high-signal telemetry:</strong> identity, admin/audit, email, endpoint.</li>
+                <li><strong>Contain with intent:</strong> isolate safely, revoke sessions/tokens, remove malicious rules—capture before change.</li>
+                <li><strong>Preserve artifacts:</strong> timestamps, hashes (where applicable), access trails, and evidence locations.</li>
+              </ul>
+              <p class="muted">
+                This is not bureaucracy. It is how you preserve truth under pressure.
+              </p>
+            </article>
+          </div>
+
+          <div class="section-head compact">
+            <h2>Start here</h2>
+            <p>Use these baselines to build readiness without a security department.</p>
+          </div>
+
+          <div class="insights-grid single">
+            <article class="insight-card">
+              <p class="muted">
+                <a class="link-strong" href="/playbooks/logging.html">Minimum viable logging →</a>
+                <span aria-hidden="true"> • </span>
+                <a class="link-strong" href="/playbooks/dfir-playbook.html">DFIR first 60 minutes →</a>
+                <span aria-hidden="true"> • </span>
+                <a class="link-strong" href="/#contact">Request implementation support →</a>
+              </p>
+              <p class="muted">
+                If your response starts with “let’s pull whatever logs we can find,” you’re already behind.
+                Build the workflow before the incident builds itself around you.
+              </p>
+            </article>
+          </div>
+
+          <div class="inline-actions">
+            <a class="btn btn-ghost btn-small" href="/insights/lose-before-start.html">Back to executive version</a>
+            <a class="btn btn-ghost btn-small" href="/insights.html">Back to insights</a>
+            <a class="btn btn-ghost btn-small" href="#top">Back to top</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> SB Cyber Lab. All rights reserved.</p>
+        <p class="muted">
+          <a href="/">Home</a>
+          &nbsp;•&nbsp;
+          <a href="/insights.html">Insights</a>
+          &nbsp;•&nbsp;
+          <a href="/playbooks/">Playbooks</a>
+          &nbsp;•&nbsp;
+          <a href="/privacy.html">Privacy</a>
+          &nbsp;•&nbsp;
+          <a href="/terms.html">Terms</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

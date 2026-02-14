@@ -18,9 +18,18 @@
       property="og:description"
       content="A practical approach to centralized security logging and alerting that small teams can run."
     />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
     <meta property="og:url" content="https://sbcyberlab.com/playbooks/logging.html" />
     <meta property="og:image" content="https://sbcyberlab.com/assets/icon-512.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Minimum Viable Logging (CISA-aligned) — Playbook" />
+    <meta
+      name="twitter:description"
+      content="Minimum viable centralized logging for small teams: what to collect, how to centralize, and how to turn logs into action."
+    />
+    <meta name="twitter:image" content="https://sbcyberlab.com/assets/icon-512.png" />
 
     <link rel="icon" href="/assets/favicon.ico" />
     <link rel="icon" type="image/png" href="/assets/favicon-32.png" />
@@ -66,12 +75,19 @@
             <p class="eyebrow">Playbook</p>
             <h1>Minimum viable logging for small teams</h1>
             <p class="lead">
-              You don’t need a SOC to be prepared. You need the right signals, captured consistently, stored centrally, and tied to clear actions.
+              You don’t need a SOC to be prepared. You need the right signals, captured consistently,
+              stored centrally, and tied to clear actions.
             </p>
 
             <div class="hero-cta">
               <a class="btn" href="/#contact">Request implementation</a>
               <a class="btn btn-ghost" href="/playbooks/">Back to Playbooks</a>
+            </div>
+
+            <div class="inline-actions" aria-label="Jump links">
+              <a class="btn btn-small btn-ghost" href="#collect">What to collect</a>
+              <a class="btn btn-small btn-ghost" href="#centralize">Centralize</a>
+              <a class="btn btn-small btn-ghost" href="#alerts">Alerts</a>
             </div>
 
             <ul class="trust" aria-label="What this delivers">
@@ -106,6 +122,10 @@
 
           <div class="insight-card">
             <p class="muted">
+              <strong>Logging without an evidence question is just storage.</strong>
+              Your baseline should answer: who did what, when, from where, and with what privilege.
+            </p>
+            <p class="muted">
               After an incident, the first question is always the same: <strong>“What happened?”</strong>
               If your logs are scattered, overwritten, or incomplete, you lose time—and confidence—fast.
             </p>
@@ -119,7 +139,7 @@
 
       <hr class="section-divider" />
 
-      <section class="section alt">
+      <section class="section alt" id="collect">
         <div class="container">
           <div class="section-head">
             <h2>What to collect first</h2>
@@ -176,7 +196,7 @@
 
       <hr class="section-divider" />
 
-      <section class="section">
+      <section class="section" id="centralize">
         <div class="container">
           <div class="section-head">
             <h2>Centralize it (without pain)</h2>
@@ -203,7 +223,20 @@
 
       <hr class="section-divider" />
 
-      <section class="section alt">
+      <section class="section">
+        <div class="container">
+          <div class="callout">
+            <strong>Related insight:</strong>
+            <a href="/insights/incident-ownership.html">Incident Ownership: Name the IC and Decision Rights</a>
+            <br />
+            <span class="muted">Ownership + decision rights make your logging usable during real incidents.</span>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <section class="section alt" id="alerts">
         <div class="container">
           <div class="section-head">
             <h2>Alerts your team can actually run</h2>
