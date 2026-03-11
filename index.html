@@ -69,6 +69,7 @@
             <li><a href="/playbooks/">Playbooks</a></li>
             <li><a href="/insights">Insights</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="https://github.com/sbcyberlab" target="_blank" rel="noopener noreferrer">Lab ↗</a></li>
             <li><a class="btn btn-small" href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -266,7 +267,14 @@
             <p>Short, practical guidance informed by research and real-world security delivery.</p>
           </div>
 
-          <div class="insights-grid">
+          <div class="insights-grid featured-grid">
+            <article class="insight-card">
+              <p class="kicker">Featured insight</p>
+              <h3>Why “Secure by Design” Keeps Failing — and What a Threat-Modeling-First Culture Actually Looks Like</h3>
+              <p class="muted">The phrase has been diluted into a compliance checkbox. After a decade of engagements, the pattern is consistent: security is treated as a property to be checked rather than a discipline practiced continuously. Here’s what actually changes that.</p>
+              <a class="btn btn-ghost btn-small" href="/insights/secure-by-design.html" style="margin-top:10px;">Read insight</a>
+            </article>
+
             <article class="insight-card">
               <p class="kicker">Insight</p>
               <h3>Secure SDLC: what “good” looks like</h3>
@@ -325,33 +333,84 @@
       <hr class="section-divider" />
 
       <section class="section about-glow" id="about">
-        <div class="container about">
-          <div>
-            <h2>About SB Cyber Lab</h2>
+        <div class="container">
 
-            <ul class="checklist">
-              <li><strong>Research → delivery:</strong> translating research-grade security into practical outcomes.</li>
-              <li><strong>Secure-by-design architecture:</strong> systems that withstand real-world threats.</li>
-              <li><strong>Resilience under pressure:</strong> stronger response, recovery, and operational confidence.</li>
-              <li><strong>Centralized logging:</strong> a practical baseline for collection, alerting, and enablement (1–2 weeks).</li>
-              <li><strong>Forensic readiness:</strong> evidence captured, preserved, and usable when incidents occur.</li>
-            </ul>
-
-            <p class="muted">
-              If you want a focused security program with clear deliverables—not endless theory—this is where we work.
-            </p>
+          <!-- Personal bio -->
+          <div class="about-bio-card">
+            <div class="about-bio-text">
+              <p class="eyebrow" style="margin-bottom:14px;">About the founder</p>
+              <h2 style="margin-bottom:14px;">PhD-trained. New York City&#8209;based.</h2>
+              <p>I founded SB Cyber Lab to close the gap between rigorous security research and what engineering teams can actually ship. My doctoral work spanned digital forensic readiness, secure architectures, and NLP/ML approaches to cybercrime detection — and every engagement I run draws directly on that foundation.</p>
+              <p class="muted">Based in New York City, I work with a small number of clients at a time across financial services, healthcare, and technology — sectors where the cost of getting security wrong is high and the pressure to move fast is real. I bring an academic's precision and a practitioner's instinct for what matters in production.</p>
+              <p class="muted">My ORCID is <a class="link-strong" href="https://orcid.org/0000-0003-0523-2751" target="_blank" rel="noopener noreferrer">0000-0003-0523-2751</a> — you can see the published research there. The consulting work builds on it.</p>
+            </div>
+            <div class="about-bio-aside">
+              <div class="about-box" style="margin-bottom:14px;">
+                <h3>Background</h3>
+                <ul class="checklist">
+                  <li><strong>PhD</strong> — security research, forensics &amp; ML</li>
+                  <li><strong>New York City</strong> — available globally</li>
+                  <li>Published researcher (ORCID: 0000-0003-0523-2751)</li>
+                  <li>Specialist in forensic readiness &amp; secure architecture</li>
+                </ul>
+              </div>
+              <div class="about-box">
+                <h3>Engagement options</h3>
+                <ul class="checklist">
+                  <li>Architecture review (1–2 weeks)</li>
+                  <li>Secure SDLC blueprint + rollout plan</li>
+                  <li>DFR/DFIR readiness assessment</li>
+                  <li>Centralized logging &amp; monitoring baseline</li>
+                  <li>Risk governance advisory</li>
+                </ul>
+                <a class="btn btn-small" href="#contact" style="margin-top:12px;">Start here</a>
+              </div>
+            </div>
           </div>
 
-          <div class="about-box">
-            <h3>Engagement options</h3>
-            <ul class="checklist">
-              <li>Architecture review (1–2 weeks)</li>
-              <li>Secure SDLC blueprint + rollout plan</li>
-              <li>DFR/DFIR readiness assessment</li>
-              <li>Centralized logging & monitoring baseline (1–2 weeks)</li>
-              <li>Risk governance advisory</li>
-            </ul>
-            <a class="btn btn-small" href="#contact">Start here</a>
+          <!-- Original about capabilities row -->
+          <div class="about" style="margin-top:18px;">
+            <div>
+              <h2>What we deliver</h2>
+              <ul class="checklist">
+                <li><strong>Research → delivery:</strong> translating research-grade security into practical outcomes.</li>
+                <li><strong>Secure-by-design architecture:</strong> systems that withstand real-world threats.</li>
+                <li><strong>Resilience under pressure:</strong> stronger response, recovery, and operational confidence.</li>
+                <li><strong>Centralized logging:</strong> a practical baseline for collection, alerting, and enablement (1–2 weeks).</li>
+                <li><strong>Forensic readiness:</strong> evidence captured, preserved, and usable when incidents occur.</li>
+              </ul>
+              <p class="muted" style="margin-top:12px;">
+                If you want a focused security program with clear deliverables—not endless theory—this is where we work.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <!-- Open to roles signal -->
+      <section class="section alt" id="open-to-roles" style="padding: 32px 0;">
+        <div class="container">
+          <div class="roles-band">
+            <div class="roles-band-left">
+              <span class="eyebrow" style="margin-bottom:0; background:rgba(183,121,31,0.10); border-color:rgba(183,121,31,0.28); color:var(--gold);">
+                Open to roles
+              </span>
+              <div>
+                <h3 style="margin:0 0 4px; color:var(--navy);">Available for senior security leadership positions</h3>
+                <p class="muted" style="margin:0;">Actively considering CISO, VP Security, Principal Security Architect, and board-level advisory roles — particularly in fintech, healthcare, and AI-enabled infrastructure.</p>
+                <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;">
+                  <span class="pub-tag">CISO</span>
+                  <span class="pub-tag">VP Security</span>
+                  <span class="pub-tag">Security Architect</span>
+                  <span class="pub-tag">Advisory / Board</span>
+                  <span class="pub-tag">Fintech · Healthcare · AI</span>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-accent" href="#contact" style="white-space:nowrap; flex-shrink:0;">Get in touch →</a>
           </div>
         </div>
       </section>
@@ -459,6 +518,10 @@
         <p>© <span id="year"></span> SB Cyber Lab. All rights reserved.</p>
         <p class="muted">
           <a href="/insights">Insights</a>
+          &nbsp;•&nbsp;
+          <a href="/playbooks/">Playbooks</a>
+          &nbsp;•&nbsp;
+          <a href="https://github.com/sbcyberlab" target="_blank" rel="noopener noreferrer">GitHub Lab ↗</a>
           &nbsp;•&nbsp;
           <a href="/privacy.html">Privacy</a>
           &nbsp;•&nbsp;

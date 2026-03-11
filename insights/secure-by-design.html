@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why "Secure by Design" Keeps Failing | SB Cyber Lab</title>
+
+    <meta
+      name="description"
+      content="Secure by design has been diluted into a checkbox. A decade of engagements shows one root cause: security treated as a property to check, not a discipline to practice. Threat modeling done seriously is the most reliable lever to change that."
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://sbcyberlab.com/insights/secure-by-design.html" />
+
+    <meta property="og:site_name" content="SB Cyber Lab" />
+    <meta property="og:title" content="Why &quot;Secure by Design&quot; Keeps Failing — and What a Threat-Modeling-First Culture Actually Looks Like" />
+    <meta
+      property="og:description"
+      content="Secure by design has been diluted into a compliance checkbox. Threat modeling done seriously is the most reliable lever to change that — here's what it actually looks like in practice."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sbcyberlab.com/insights/secure-by-design.html" />
+    <meta property="og:image" content="https://sbcyberlab.com/assets/icon-512.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Why &quot;Secure by Design&quot; Keeps Failing" />
+    <meta name="twitter:description" content="Threat modeling done seriously is the most reliable lever to build a genuine secure-by-design culture. Here's what it looks like in practice." />
+    <meta name="twitter:image" content="https://sbcyberlab.com/assets/icon-512.png" />
+
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/styles.css?v=4" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="SB Cyber Lab home">
+          <img
+            src="/assets/sbcyberlab_logo.png"
+            alt="SB Cyber Lab logo"
+            class="brand-logo"
+            width="240"
+            height="54"
+          />
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="/insights.html" aria-current="page">Insights</a></li>
+            <li><a href="/playbooks/">Playbooks</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="https://github.com/sbcyberlab" target="_blank" rel="noopener noreferrer">Lab ↗</a></li>
+            <li><a class="btn btn-small" href="/#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section" id="top">
+        <div class="container">
+          <article class="insight">
+
+            <header class="insight-header">
+              <p class="kicker">Insight · Secure Architecture · Threat Modeling</p>
+              <h1>Why &ldquo;Secure by Design&rdquo; Keeps Failing &mdash; and What a Threat-Modeling-First Culture Actually Looks Like</h1>
+              <p class="lede">
+                The phrase has been diluted into a compliance checkbox. After a decade of engagements across financial infrastructure, SaaS platforms, and critical systems, the pattern is consistent: security treated as a property to check, not a discipline practiced continuously. Threat modeling done seriously is the most reliable lever to change that.
+              </p>
+              <p class="muted" style="font-size:0.92rem; margin-top:10px;">SB Cyber Lab &nbsp;·&nbsp; March 2025 &nbsp;·&nbsp; 10 min read</p>
+            </header>
+
+            <hr class="section-divider" style="margin: 24px 0;" />
+
+            <h2>The failure isn't a technology problem</h2>
+
+            <p>
+              Organizations display "secure by design" in security policies and SDLC documentation while continuing to ship products where security is bolted on at QA — or discovered by a researcher six months post-launch. The tooling is rarely the issue. The issue is organizational: security is treated as a gate rather than a practice, and threat modeling — when it happens at all — is a one-off ceremony at project kickoff, not a living part of engineering.
+            </p>
+
+            <p>
+              When I audit security programs, the tell is almost always in the backlog. If security findings live in a separate queue that engineering consults only at release, the culture hasn't changed. Security is still a tax. The goal is to make it feel more like a design constraint — the way performance or reliability budgets function for mature teams.
+            </p>
+
+            <h2>What "secure by design" actually means in practice</h2>
+
+            <p>
+              Effective threat modeling is not a workshop you run once at design kickoff. It's a living process tied to your feature backlog, your architecture decisions, and your incident retrospectives. When teams internalize this, something shifts: engineers start asking "what could go wrong here?" before they ask "does this work?" That instinct — cultivated at the team level — is what secure by design actually means in practice.
+            </p>
+
+            <div class="callout">
+              <h3>The signal to watch for</h3>
+              <p>Ask any engineer on the team: "Who do you go to when you have a security question about a design decision?" If the answer is "I'd open a ticket to security" rather than "I'd just think it through with the team," you have a culture problem, not a tooling problem. The goal is to make security reasoning a native capability of the engineering team, not a dependency on a specialist queue.</p>
+            </div>
+
+            <h2>The models that work — and the ones that don't</h2>
+
+            <p>
+              The models that work aren't the heaviest ones. STRIDE exhaustively applied to every microservice will kill velocity without commensurate security gain. The models that stick are lightweight enough to be done in 30 minutes on a whiteboard but rigorous enough to catch:
+            </p>
+
+            <ul>
+              <li><strong>Trust boundary violations</strong> — data crossing a boundary without adequate validation or authorization check</li>
+              <li><strong>Over-privileged service accounts</strong> — services running with permissions far beyond what the function requires</li>
+              <li><strong>Implicit assumptions about data sensitivity</strong> — fields treated as non-sensitive in one context that carry risk in another</li>
+              <li><strong>Missing logging at decision points</strong> — authorization decisions, state transitions, and external calls that leave no forensic trail</li>
+            </ul>
+
+            <p>
+              For most teams, a 30-minute structured walkthrough of a new feature using a simple four-question framework — Who can access this? What's the worst they can do? What would we know if they did? How would we stop them? — catches the majority of high-severity design flaws before a line of code is written.
+            </p>
+
+            <h2>The culture lever: findings as engineering debt, not blame</h2>
+
+            <p>
+              Threat modeling adoption fails when findings are treated as indictments. If surfacing a security issue in a design review is career-risky for the engineer who found it, they won't surface it. The remediation is to make security findings unambiguously a form of engineering debt — prioritized, tracked, and resolved with the same weight as performance issues or reliability gaps.
+            </p>
+
+            <p>
+              This requires explicit executive sponsorship. Engineering managers need to see that their teams are measured on security debt reduction, not just feature velocity. When security work appears in sprint planning as a first-class concern — not as a tax levied at release — behavior changes at the team level.
+            </p>
+
+            <div class="callout">
+              <h3>A practical starting point</h3>
+              <ul>
+                <li>Add a 30-minute threat model to every feature with external trust boundaries or sensitive data</li>
+                <li>Track findings in the same backlog as engineering work, with severity ratings and clear owners</li>
+                <li>Review security debt in sprint planning, not just at release</li>
+                <li>Run a quarterly retrospective on closed security findings — what patterns keep recurring?</li>
+              </ul>
+            </div>
+
+            <h2>The forensic dimension</h2>
+
+            <p>
+              One thing threat modeling surfaces that most security checklists miss: logging gaps. When you walk through a threat scenario end-to-end — from initial access to lateral movement to exfiltration — you quickly identify the decision points where the system has no record of what happened. That's your forensic readiness posture.
+            </p>
+
+            <p>
+              Forensic readiness isn't about retaining everything. It's about retaining the right things with the right fidelity and the right chain of custody. Threat modeling helps you identify which decisions matter for a future investigation, which lets you instrument precisely rather than log everything and drown in noise.
+            </p>
+
+            <footer class="insight-footer">
+              <p class="tags">Tags: threat modeling, secure architecture, security culture, forensic readiness, SDLC</p>
+              <p class="muted">
+                Interested in running a threat modeling program or security culture assessment at your organization?
+                <a class="link-strong" href="/#contact">Request a consultation.</a>
+              </p>
+            </footer>
+
+            <section class="related">
+              <div class="section-head compact">
+                <h2>Related insights</h2>
+              </div>
+              <div class="insights-grid" style="margin-top:14px;">
+                <article class="insight-card">
+                  <p class="kicker">Insight</p>
+                  <h3>Forensic readiness in SaaS systems</h3>
+                  <p class="muted">Minimum logging + evidence integrity practices that make investigations faster and defensible.</p>
+                  <a class="btn btn-ghost btn-small" href="/insights#forensic-readiness">Read</a>
+                </article>
+                <article class="insight-card">
+                  <p class="kicker">Insight</p>
+                  <h3>Why most teams lose the incident before it starts</h3>
+                  <p class="muted">Most incident failures are decided before the alert: missing logs, unclear ownership, no decision discipline.</p>
+                  <a class="btn btn-ghost btn-small" href="/insights/lose-before-start.html">Read</a>
+                </article>
+                <article class="insight-card">
+                  <p class="kicker">Insight</p>
+                  <h3>DFIR playbooks that actually work</h3>
+                  <p class="muted">Runbooks teams follow under pressure — clear triggers, owners, and escalation paths.</p>
+                  <a class="btn btn-ghost btn-small" href="/insights#dfir-playbooks">Read</a>
+                </article>
+              </div>
+            </section>
+
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> SB Cyber Lab. All rights reserved.</p>
+        <p class="muted">
+          <a href="/insights.html">Insights</a>
+          &nbsp;•&nbsp;
+          <a href="/playbooks/">Playbooks</a>
+          &nbsp;•&nbsp;
+          <a href="https://github.com/sbcyberlab" target="_blank" rel="noopener noreferrer">GitHub Lab ↗</a>
+          &nbsp;•&nbsp;
+          <a href="/privacy.html">Privacy</a>
+          &nbsp;•&nbsp;
+          <a href="/terms.html">Terms</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
